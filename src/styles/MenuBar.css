@@ -1,21 +1,25 @@
+.MenuBarContainer {
+    height: 10%;
+    width: 100%;
+    font-family: Poppins, sans-serif;
+}
+
 .MenuBar {
     background-color: rgb(34, 34, 34);
     width: 100%;
-    height: 60px;
     box-shadow: 0px 2px 5px 2px;
     position: fixed;
     z-index: 2;
 }
 
 .MenuButton {
-    float: left;
-    width: 120px;
-    margin: 6px 0 12px 20px;
-    padding: 10px 10px 3px 10px;
+    min-width: 120px;
+    margin: 0.4rem 0 0.8rem 1.45rem;
+    padding: 0.4rem 0.6rem 0.4rem 0.6rem;
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0);
-    font-family: Poppins, sans-serif;
+
     font-weight: 400;
     font-size: 17px;
     color: white;
@@ -35,9 +39,4 @@
 
 .MenuButton:focus {
     outline-color: rgb(252, 185, 0);
-}
-
-.HelpButton {
-    float: right;
-    margin-right: 20px;
 }

@@ -35,7 +35,7 @@ const PlannerTab: React.FC<PlannerTabProps> = ({ tracks, cars }) => {
         <div className='PlannerTabWrapper'>
             <h3 className='PlannerTabIntro'>iRacing 2020 S3 Schedule - Week {currentWeek}</h3>
             <h2 className='PlannerTabHeader'>Schedule for Week {viewingWeek}</h2>
-            <p className='changeWeekInfo'>
+            <p className='ChangeWeekInfo'>
                 Use the buttons below to view the schedule for a different week.
             </p>
             <WeekSelector
@@ -46,7 +46,7 @@ const PlannerTab: React.FC<PlannerTabProps> = ({ tracks, cars }) => {
             <div className='changeWeekView'></div>
             {JSON.stringify(tracks) === JSON.stringify(defaultTrackData) &&
             JSON.stringify(cars) === JSON.stringify(defaultCarsData) ? (
-                <div className='noContentAdded'>
+                <div className='NoContentAdded'>
                     It looks like you haven't added any content yet. Please use the 'Set Cars' and
                     'Set Tracks' tabs to select your owned content.
                 </div>

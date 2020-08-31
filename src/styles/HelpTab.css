@@ -1,12 +1,11 @@
 .helpTabWrapper {
+    font-family: Poppins, 'sans-serif';
+    color: white;
     background-color: rgb(92, 92, 92);
-    /* height: calc(100%-60px); */
     height: 100%;
     width: 100%;
-    place-items: center;
     position: absolute;
-    top: 60px;
-    padding-top: 80px;
+    padding-top: 9rem;
 }
 
 .helpTabInfo {
@@ -14,18 +13,7 @@
     padding: 10px;
     background-color: rgb(124, 124, 124);
     text-align: center;
-    width: 40%;
-    min-width: 500px;
-    margin-left: 30%;
+    margin: auto;
+    max-width: 700px;
     box-shadow: black 3px 3px 11px 2px;
-}
-
-.helpInfoHeader {
-    font-family: Poppins, 'sans-serif';
-    color: white;
-}
-
-.helpInfo {
-    font-family: Poppins, 'sans-serif';
-    color: white;
 }

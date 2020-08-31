@@ -5,8 +5,8 @@ const HelpTab = () => {
     return (
         <div className='helpTabWrapper'>
             <div className='helpTabInfo'>
-                <h2 className='helpInfoHeader'>What is this site?</h2>
-                <p className='helpInfo'>
+                <h2>What is this site?</h2>
+                <p>
                     The iRacing Schedule Tracker checks a user's eligibility for iRacing.com's road
                     racing series based on owned content, which can be set through the 'Set Cars'
                     and 'Set Tracks' tabs. The table of series on the 'Planner' tab is populated
@@ -22,6 +22,9 @@ const HelpTab = () => {
                     All images on this site are taken from{' '}
                     <a href='https://iracing.com'>iRacing.com</a>
                     <br /> This app was made with React and TypeScript. Created by Adam Wilmott.
+                    <br />
+                    Source code available on{' '}
+                    <a href='https://github.com/Spellcro/iracing-schedule'>github</a>.
                 </p>
             </div>
         </div>

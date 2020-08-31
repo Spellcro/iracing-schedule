@@ -18,7 +18,7 @@ const EligibleSeriesTable: React.FC<EligibleSeriesProps> = ({ viewingWeek, track
 
     return (
         <div>
-            <Table bordered responsive className='seriesTable'>
+            <Table bordered responsive className='SeriesTable'>
                 <thead>
                     <tr className='PlannerTableHeader'>
                         <th>Series</th>

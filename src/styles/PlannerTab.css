@@ -5,11 +5,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    max-height: 100%;
-    top: 60px;
-    left: 0;
-    overflow: hidden;
-    padding-top: 60px;
+    padding-top: 7.5rem;
 }
 
 .PlannerTabIntro {
@@ -26,7 +22,6 @@
 }
 
 .PlannerTabHeader {
-    margin: 5px;
     font-family: Poppins, sans-serif;
     text-align: center;
 }
@@ -40,17 +35,18 @@
     background-color: rgb(207, 207, 207);
 }
 
-.changeWeekInfo {
+.ChangeWeekInfo {
     font-family: Poppins, sans-serif;
     text-align: center;
     font-size: small;
 }
 
-.seriesTable {
+.SeriesTable {
     background-color: rgb(230, 228, 228);
+    overflow: hidden;
 }
 
-.noContentAdded {
+.NoContentAdded {
     font-family: Poppins, sans-serif;
     text-align: center;
     font-size: medium;
