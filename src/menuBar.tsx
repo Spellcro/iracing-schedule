@@ -28,23 +28,6 @@ const MenuBar: React.FC<MenuBarProps> = ({ activeTab, allTabs, callback }) => {
             </Nav>
         </div>
     );
-
-    // This is the old menu bar code.
-    // return (
-    //     <div className='MenuBar'>
-    //         {allTabs.map((tab) => (
-    //             <button
-    //                 className='MenuButton'}
-    //                 disabled={tab === activeTab ? true : false}
-    //                 onClick={callback}
-    //                 value={tab}
-    //                 key={tab}
-    //             >
-    //                 <span>{tab}</span>
-    //             </button>
-    //         ))}
-    //     </div>
-    // );
 };
 
 export default MenuBar;

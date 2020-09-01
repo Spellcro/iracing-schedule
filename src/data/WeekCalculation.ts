@@ -5,11 +5,11 @@
 export const seasonLength = 13;
 
 const CreateWeekBeginnings = (StartOfSeasonInUTC: Date, WeeksInSeason: number): number[] => {
-    let StartOfSeasonInMS = StartOfSeasonInUTC.getTime();
-    const MillisecondsInAWeek = 604800000;
+    const StartOfSeasonInMS = StartOfSeasonInUTC.getTime();
+    const millisecondsInAWeek = 604800000;
     let WeekBeginnings = [StartOfSeasonInMS];
-    for (let i = 1; i < WeeksInSeason; i++) {
-        WeekBeginnings[i] = StartOfSeasonInMS + i * MillisecondsInAWeek;
+    for (let i = 1; i <= WeeksInSeason; i++) {
+        WeekBeginnings[i] = StartOfSeasonInMS + i * millisecondsInAWeek;
     }
     return WeekBeginnings;
 };
@@ -19,7 +19,7 @@ const GetCurrentWeek = () => {
     let WeekBeginnings = CreateWeekBeginnings(StartOfSeasonInUTC, seasonLength);
     const currentTime = Date.now();
     let CurrentWeek = 1;
-    for (let i = 1; i <= WeekBeginnings.length; i++) {
+    for (let i = 1; i <= seasonLength + 1; i++) {
         if (currentTime < WeekBeginnings[i]) {
             CurrentWeek = i;
             break;

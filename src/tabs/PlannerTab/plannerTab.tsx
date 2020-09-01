@@ -26,10 +26,6 @@ const PlannerTab: React.FC<PlannerTabProps> = ({ tracks, cars }) => {
     const ChangeWeek = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         setViewingWeek(Number(e.currentTarget.value));
     };
-    console.log('tracks object');
-    console.log(tracks);
-    console.log('default');
-    console.log(defaultTrackData);
 
     return (
         <div className='PlannerTabWrapper'>
