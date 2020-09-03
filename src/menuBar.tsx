@@ -1,31 +1,23 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
-
+import { AppBar, Tabs, Tab } from '@material-ui/core';
 // Import styles
 import './styles/MenuBar.css';
 type MenuBarProps = {
     activeTab: string;
     allTabs: string[];
-    callback: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    callback: (e: React.ChangeEvent<{}>, newValue: string) => void;
 };
 
 const MenuBar: React.FC<MenuBarProps> = ({ activeTab, allTabs, callback }) => {
     return (
-        <div className='MenuBarContainer'>
-            <Nav className='MenuBar'>
-                {allTabs.map((tab) => (
-                    <Nav.Item
-                        as='button'
-                        className={'MenuButton'}
-                        onClick={callback}
-                        value={tab}
-                        key={tab}
-                        disabled={tab === activeTab ? true : false}
-                    >
-                        {tab}
-                    </Nav.Item>
-                ))}
-            </Nav>
+        <div>
+            <AppBar position='fixed' color='default'>
+                <Tabs value={activeTab} onChange={callback} aria-label='simple tabs example'>
+                    {allTabs.map((tab) => (
+                        <Tab value={tab} label={tab} key={tab} />
+                    ))}
+                </Tabs>
+            </AppBar>
         </div>
     );
 };

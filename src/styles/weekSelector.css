@@ -3,51 +3,9 @@
 }
 
 .changeWeekButton {
-    border: 0;
-    font-family: Poppins, sans-serif;
-    background-color: rgb(34, 34, 34);
-    color: rgb(252, 185, 0);
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    min-width: 50px;
-    box-shadow: black 1px 2px 6px;
+    margin: 0.4rem !important;
 }
-
 .changeWeekButton:hover {
-    color: rgb(252, 185, 0);
-    box-shadow: black 1px 2px 6px;
-    background-color: rgb(58, 58, 58);
-}
-
-.changeWeekButton:focus {
-    box-shadow: black 1px 2px 6px;
-    border: 0;
-    color: rgb(252, 185, 0);
-    background-color: rgb(34, 34, 34);
-}
-
-.resetWeekButton {
-    border: 0;
-    font-family: Poppins, sans-serif;
-    background-color: rgb(34, 34, 34);
-    color: rgb(252, 185, 0);
-    margin-left: 30px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    min-width: 50px;
-    box-shadow: black 1px 2px 6px;
-}
-
-.resetWeekButton:hover {
-    color: rgb(252, 185, 0);
-    box-shadow: black 1px 2px 6px;
-    background-color: rgb(58, 58, 58);
-}
-
-.resetWeekButton:focus {
-    box-shadow: black 1px 2px 6px;
-    border: 0;
-    color: rgb(252, 185, 0);
-    background-color: rgb(34, 34, 34);
+    box-shadow: black 1px 3px 6px;
+    font-weight: 600;
 }

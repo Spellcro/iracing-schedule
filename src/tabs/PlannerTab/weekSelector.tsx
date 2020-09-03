@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from '@material-ui/core';
 // Import styles
 import '../../styles/weekSelector.css';
 
@@ -19,10 +19,11 @@ const WeekSelector: React.FC<WeekSelectorProps> = ({ callback, seasonLength, cur
             {numArray.map((num) => {
                 return (
                     <Button
-                        className={'changeWeekButton'}
+                        className='changeWeekButton'
                         value={num}
                         onClick={callback}
-                        variant='warning'
+                        variant='contained'
+                        color='default'
                         key={num}
                     >
                         {num}
@@ -30,10 +31,11 @@ const WeekSelector: React.FC<WeekSelectorProps> = ({ callback, seasonLength, cur
                 );
             })}
             <Button
-                className='resetWeekButton'
+                className='changeWeekButton'
                 value={currentWeek}
                 onClick={callback}
-                variant='warning'
+                variant='contained'
+                color='default'
             >
                 Reset
             </Button>

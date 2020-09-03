@@ -11,11 +11,11 @@
 }
 
 .UnownedContent {
-    border: 4px ridge rgb(168, 7, 7);
+    border: 6px ridge rgb(255, 51, 0);
 }
 
 .OwnedContent {
-    border: 4px ridge rgb(37, 156, 13);
+    border: 6px ridge rgb(49, 207, 17);
 }
 .ContentImage {
     background-color: rgb(92, 92, 92);
@@ -36,13 +36,13 @@
 }
 
 .ContentHoverText {
-    color: white;
+    font-weight: 500;
     font-size: large;
     user-select: none;
 }
 
 .ContentHoverButton {
-    background-color: rgb(12, 180, 180);
+    background-color: rgb(20, 168, 40);
     border-radius: 14px;
     color: white;
     font-size: 18px;
@@ -82,29 +82,16 @@
 }
 
 .SelectAllButtonContainer {
+    padding-top: 1.5rem;
     text-align: center;
     height: 60px;
     width: 100%;
 }
 
 .SelectAllButton {
-    margin: 20px 10px 10px;
-    font-family: Poppins, sans-serif;
-    box-shadow: black 1px 2px 6px;
-    color: rgb(252, 185, 0);
-    background-color: rgb(34, 34, 34);
-    border: 0;
+    margin-left: 0.4rem !important;
 }
-
 .SelectAllButton:hover {
-    color: rgb(252, 185, 0);
-    box-shadow: black 1px 2px 6px;
-    background-color: rgb(58, 58, 58);
-}
-
-.SelectAllButton:focus {
-    box-shadow: black 1px 2px 6px;
-    border: 0;
-    color: rgb(252, 185, 0);
-    background-color: rgb(34, 34, 34);
+    box-shadow: black 1px 3px 6px;
+    font-weight: 600;
 }

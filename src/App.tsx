@@ -49,8 +49,8 @@ const App = () => {
 
     // Create functions to utilise setState for the site
 
-    const changeTab = (e: React.MouseEvent<HTMLButtonElement>) => {
-        setActiveTab(e.currentTarget.value);
+    const changeTab = (e: React.ChangeEvent<{}>, newValue: string) => {
+        setActiveTab(newValue);
     };
 
     const updateOwnedTrack = (trackName: string) => {

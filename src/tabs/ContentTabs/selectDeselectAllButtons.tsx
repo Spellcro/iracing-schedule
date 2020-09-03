@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { Button } from '@material-ui/core';
 import { ContentObject } from './contentTab';
 import '../../styles/ContentTab.css';
 
@@ -35,10 +35,20 @@ const SelectDeselectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
 
     return (
         <div className='SelectAllButtonContainer'>
-            <Button onClick={SelectAll} className='SelectAllButton' variant='warning'>
+            <Button
+                onClick={SelectAll}
+                className='SelectAllButton'
+                variant='contained'
+                color='default'
+            >
                 Select All
             </Button>
-            <Button onClick={DeselectAll} className='SelectAllButton' variant='warning'>
+            <Button
+                onClick={DeselectAll}
+                className='SelectAllButton'
+                variant='contained'
+                color='default'
+            >
                 Deselect All
             </Button>
         </div>
