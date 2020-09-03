@@ -47,7 +47,7 @@ const App = () => {
     const trackList: string[] = Object.keys(trackData);
     const carList: string[] = Object.keys(carData);
 
-    // Create functions to utilise setState for the 3 state hooks
+    // Create functions to utilise setState for the site
 
     const changeTab = (e: React.MouseEvent<HTMLButtonElement>) => {
         setActiveTab(e.currentTarget.value);

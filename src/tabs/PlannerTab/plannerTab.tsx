@@ -16,13 +16,11 @@ type PlannerTabProps = {
 const PlannerTab: React.FC<PlannerTabProps> = ({ tracks, cars }) => {
     // Get the current week
     const currentWeek = GetCurrentWeek();
-    // Create a currently viewed week in state
-    const [viewingWeek, setViewingWeek] = useState(currentWeek);
-    // Changed the currently viewed week when clicking on the button.
-    // const changeWeekView = (e) => {
-    //     viewingWeek = e.target.value;
-    // };
 
+    // Create a currently viewed week state
+    const [viewingWeek, setViewingWeek] = useState(currentWeek);
+
+    // Set viewingWeek state when clicking the button.
     const ChangeWeek = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         setViewingWeek(Number(e.currentTarget.value));
     };
