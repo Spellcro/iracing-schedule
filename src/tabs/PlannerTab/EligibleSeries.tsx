@@ -27,16 +27,23 @@ const EligibleSeriesTable: React.FC<EligibleSeriesProps> = ({ viewingWeek, track
         id: string;
         label: string;
         minWidth?: number | string;
+        maxWidth?: number | string;
         align?: 'left' | 'center' | 'right';
     };
     const columns: Columns[] = [
-        { id: 'series', label: 'Series', minWidth: '20rem', align: 'left' },
-        { id: 'licence', label: 'Licence Class', minWidth: '10rem', align: 'center' },
-        { id: 'track', label: 'Track', minWidth: '15rem', align: 'left' },
+        { id: 'series', label: 'Series', minWidth: '15rem', maxWidth: '47%', align: 'left' },
+        {
+            id: 'licence',
+            label: 'Licence Class',
+            minWidth: '5rem',
+            maxWidth: '16%',
+            align: 'center',
+        },
+        { id: 'track', label: 'Track', minWidth: '15rem', maxWidth: '47%', align: 'left' },
     ];
     return (
         <div style={{ backgroundColor: 'white' }}>
-            <TableContainer style={{ maxHeight: 600 }}>
+            <TableContainer style={{ maxHeight: 600, width: '100%', margin: 'auto' }}>
                 <Table stickyHeader>
                     <TableHead>
                         <TableRow>
@@ -44,9 +51,13 @@ const EligibleSeriesTable: React.FC<EligibleSeriesProps> = ({ viewingWeek, track
                                 <TableCell
                                     key={column.id}
                                     align='center'
-                                    style={{ minWidth: column.minWidth }}
+                                    style={{
+                                        minWidth: column.minWidth,
+                                        maxWidth: column.maxWidth,
+                                        position: 'relative',
+                                    }}
                                 >
-                                    {column.label}
+                                    <span style={{ position: 'relative' }}>{column.label}</span>
                                 </TableCell>
                             ))}
                         </TableRow>
