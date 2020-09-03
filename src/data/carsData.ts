@@ -40,7 +40,11 @@ const defaultCarsData: ContentObject = {
         free: false,
         owned: false,
     },
-
+    corvettec8r: {
+        name: 'Chevrolet Corvette C8.R',
+        free: false,
+        owned: false,
+    },
     dallaraf3: {
         name: 'Dallara F3',
         free: false,

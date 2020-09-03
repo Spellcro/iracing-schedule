@@ -27,9 +27,14 @@
     text-align: center;
 }
 
-.FullyEligibleContent {
+.EligibleContent {
     transition: 0.25s;
     background-color: rgba(94, 252, 94, 0.432);
+}
+
+.IneligibleContent {
+    transition: 0.25s;
+    background-color: white;
 }
 
 .PlannerTableHeader {

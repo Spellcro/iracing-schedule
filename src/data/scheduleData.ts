@@ -8,7 +8,7 @@ export type SeriesDetails = {
     licenseClass: string;
 };
 
-const FullSeasonSchedule: ScheduleObject = {
+const fullSeasonSchedule: ScheduleObject = {
     skipbarber: {
         seriesName: 'Skip Barber Racing Series',
         eligibleCars: ['skipbarber'],
@@ -51,7 +51,7 @@ const FullSeasonSchedule: ScheduleObject = {
     },
     impc: {
         seriesName: 'IMSA Michelin Pilot Challenge',
-        eligibleCars: ['bmwm4gt4', 'porsche718gt4', 'audirs3lms'],
+        eligibleCars: ['audirs3lms', 'bmwm4gt4', 'porsche718gt4'],
         seriesSchedule: [
             'brandsHatch',
             'watkinsGlen',
@@ -72,13 +72,13 @@ const FullSeasonSchedule: ScheduleObject = {
     imsa: {
         seriesName: 'IMSA Sportscar Championship',
         eligibleCars: [
+            'audir8lms',
+            'amggt3',
             'bmwm8gte',
             'porschersr',
             'ferrari488gte',
-            'audir8lms',
-            'amggt3',
-            'dallarap217',
             'fordgte',
+            'dallarap217',
         ],
         seriesSchedule: [
             'interlagos',
@@ -119,7 +119,7 @@ const FullSeasonSchedule: ScheduleObject = {
     },
     kamelgt: {
         seriesName: 'Kamel GT Championship',
-        eligibleCars: ['nissangtp', 'audi90gto'],
+        eligibleCars: ['audi90gto', 'nissangtp'],
         seriesSchedule: [
             'monza',
             'limeRock',
@@ -207,4 +207,4 @@ const FullSeasonSchedule: ScheduleObject = {
     },
 };
 
-export default FullSeasonSchedule;
+export default fullSeasonSchedule;

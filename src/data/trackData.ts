@@ -62,7 +62,7 @@ const defaultTrackData: ContentObject = {
         owned: false,
     },
     imola: {
-        name: 'Imola',
+        name: 'Autodromo Internazionale Enzo e Dino Ferrari',
         free: false,
         owned: false,
     },
