@@ -2,7 +2,7 @@
 // For StartOfSeasonInUTC, the constructor is of the form
 // Date.UTC(YEAR, MONTH, DAY),  where month is zero-indexed.
 
-export const seasonLength = 13;
+export const seasonLength = 12;
 
 const CreateWeekBeginnings = (StartOfSeasonInUTC: Date, WeeksInSeason: number): number[] => {
     const StartOfSeasonInMS = StartOfSeasonInUTC.getTime();
@@ -15,7 +15,7 @@ const CreateWeekBeginnings = (StartOfSeasonInUTC: Date, WeeksInSeason: number): 
 };
 
 const GetCurrentWeek = () => {
-    const StartOfSeasonInUTC = new Date(Date.UTC(2020, 5, 9));
+    const StartOfSeasonInUTC = new Date(Date.UTC(2020, 8, 15));
     let WeekBeginnings = CreateWeekBeginnings(StartOfSeasonInUTC, seasonLength);
     const currentTime = Date.now();
     let CurrentWeek = 1;

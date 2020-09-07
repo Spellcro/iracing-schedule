@@ -8,4 +8,5 @@
 .changeWeekButton:hover {
     box-shadow: black 1px 3px 6px;
     font-weight: 600;
+    color: rgb(245, 0, 87);
 }

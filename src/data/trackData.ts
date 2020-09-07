@@ -36,6 +36,11 @@ const defaultTrackData: ContentObject = {
         free: true,
         owned: true,
     },
+    charlotte2008: {
+        name: '[Legacy] Charlotte Motor Speedway - 2008',
+        free: true,
+        owned: true,
+    },
     cota: {
         name: 'Circuit of the Americas',
         free: false,
@@ -46,8 +51,8 @@ const defaultTrackData: ContentObject = {
         free: false,
         owned: false,
     },
-    daytona2007: {
-        name: 'Daytona International Speedway - Legacy',
+    daytona2008: {
+        name: '[Legacy] Daytona International Speedway - 2008',
         free: true,
         owned: true,
     },
@@ -92,7 +97,7 @@ const defaultTrackData: ContentObject = {
         owned: true,
     },
     limeRock2008: {
-        name: 'Lime Rock Park - Legacy',
+        name: '[Legacy] Lime Rock Park - 2008',
         free: true,
         owned: true,
     },
@@ -177,7 +182,7 @@ const defaultTrackData: ContentObject = {
         owned: false,
     },
     silverstone2008: {
-        name: 'Silverstone Circuit - Legacy',
+        name: '[Legacy] Silverstone Circuit - 2008',
         free: false,
         owned: false,
     },

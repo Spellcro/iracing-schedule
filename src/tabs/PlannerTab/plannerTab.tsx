@@ -3,8 +3,6 @@ import { ContentObject } from '../ContentTabs/contentTab';
 import WeekSelector from './weekSelector';
 import EligibleSeriesTable from './EligibleSeries';
 import GetCurrentWeek, { seasonLength } from '../../data/WeekCalculation';
-import defaultTrackData from '../../data/trackData';
-import defaultCarsData from '../../data/carsData';
 
 // Import styles
 import '../../styles/PlannerTab.css';
@@ -16,7 +14,7 @@ type PlannerTabProps = {
 const PlannerTab: React.FC<PlannerTabProps> = ({ tracks, cars }) => {
     // Get the current week
     const currentWeek = GetCurrentWeek();
-
+    console.log(`Current week is ${currentWeek}`);
     // Create a currently viewed week state
     const [viewingWeek, setViewingWeek] = useState(currentWeek);
 
@@ -37,18 +35,10 @@ const PlannerTab: React.FC<PlannerTabProps> = ({ tracks, cars }) => {
                 seasonLength={seasonLength}
                 currentWeek={currentWeek}
             />
-            <div className='changeWeekView'></div>
-            {JSON.stringify(tracks) === JSON.stringify(defaultTrackData) &&
-            JSON.stringify(cars) === JSON.stringify(defaultCarsData) ? (
-                <div className='NoContentAdded'>
-                    It looks like you haven't added any content yet. Please use the 'Set Cars' and
-                    'Set Tracks' tabs to select your owned content.
-                </div>
-            ) : (
-                <div className='PlannerTableContainer'>
-                    <EligibleSeriesTable viewingWeek={viewingWeek} tracks={tracks} cars={cars} />
-                </div>
-            )}
+
+            <div className='PlannerTableContainer'>
+                <EligibleSeriesTable viewingWeek={viewingWeek} tracks={tracks} cars={cars} />
+            </div>
         </div>
     );
 };

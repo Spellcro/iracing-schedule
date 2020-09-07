@@ -24,6 +24,11 @@ const EligibleSeriesTable: React.FC<EligibleSeriesProps> = ({ viewingWeek, track
         fullSeasonSchedule[series].eligibleCars.some((car) => cars[car].owned)
     );
 
+    // Filter the array to those which have a circuit this week
+    const eligibleSeriesThisWeek = eligibleSeries.filter(
+        (series) => fullSeasonSchedule[series].seriesSchedule[viewingWeek - 1] !== 'none'
+    );
+
     type Columns = {
         id: string;
         label: string;
@@ -70,7 +75,7 @@ const EligibleSeriesTable: React.FC<EligibleSeriesProps> = ({ viewingWeek, track
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {eligibleSeries.map((series, index) => {
+                        {eligibleSeriesThisWeek.map((series, index) => {
                             const thisWeeksTrack =
                                 tracks[fullSeasonSchedule[series].seriesSchedule[viewingWeek - 1]];
 
