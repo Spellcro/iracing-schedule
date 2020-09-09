@@ -13,6 +13,7 @@
 }
 
 .PlannerTableContainer {
+    background-color: white;
     background-color: rgb(133, 133, 133);
     margin-top: 20px;
     margin-left: auto;
@@ -51,4 +52,14 @@
 .SeriesTable {
     background-color: rgb(230, 228, 228);
     margin-bottom: 0;
+}
+
+.NoSeries {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.LicenceFilterHeader {
+    margin-top: 5px;
+    margin-bottom: -5px;
 }

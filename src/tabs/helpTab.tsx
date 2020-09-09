@@ -11,9 +11,7 @@ const HelpTab = () => {
                     racing series based on owned content, which can be set through the 'Set Cars'
                     and 'Set Tracks' tabs. The table of series on the 'Planner' tab is populated
                     automatically based on owned cars, and the entries are shown in green if the
-                    track for that week is owned. Currently most of the series are missing. The site
-                    will be updated with a full schedule at the start of 2020 Season 4 (September
-                    15th).
+                    track for that week is owned.
                     <br />
                     Oval content, both cars and tracks, is not included in this site. Any ovals (not
                     including road courses that are part of ovals, such as Daytona Road) are listed

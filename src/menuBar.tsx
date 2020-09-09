@@ -12,9 +12,9 @@ const MenuBar: React.FC<MenuBarProps> = ({ activeTab, allTabs, callback }) => {
     return (
         <div>
             <AppBar position='fixed' color='default'>
-                <Tabs value={activeTab} onChange={callback} aria-label='simple tabs example'>
+                <Tabs value={activeTab} onChange={callback} aria-label='simple menu bar'>
                     {allTabs.map((tab) => (
-                        <Tab value={tab} label={tab} key={tab} />
+                        <Tab value={tab} label={tab} key={tab} className='MenuTab' />
                     ))}
                 </Tabs>
             </AppBar>
