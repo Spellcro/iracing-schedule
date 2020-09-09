@@ -5,7 +5,7 @@ export type SeriesDetails = {
     seriesName: string;
     eligibleCars: string[];
     seriesSchedule: string[];
-    licenseClass: string;
+    licenceClass: string;
 };
 
 const fullSeasonSchedule: ScheduleObject = {
@@ -26,7 +26,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'oranPark',
             'lagunaSeca',
         ],
-        licenseClass: 'R',
+        licenceClass: 'R',
     },
     simlabPCC: {
         seriesName: 'Sim-Lab Production Car Challenge',
@@ -45,7 +45,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'oultonPark',
             'watkinsGlen',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     formulaSprint: {
         seriesName: 'Pure Driving School Formula Sprint',
@@ -64,7 +64,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'roadAtlanta',
             'okayama',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     bmw12: {
         seriesName: 'BMW 12.0 Challenge',
@@ -83,7 +83,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'brandsHatch',
             'roadAtlanta',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     tcrChallenge: {
         seriesName: 'Touring Car Challenge',
@@ -102,7 +102,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'silverstone2008',
             'summitPoint',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     ferrariChallenge: {
         seriesName: 'Ferrari GT3 Challenge',
@@ -121,7 +121,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'okayama',
             'roadAtlanta',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     skipbarber: {
         seriesName: 'Skip Barber Race Series',
@@ -140,7 +140,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'donington',
             'mountPanorama',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     fr20: {
         seriesName: 'iRacing Formula Renault 2.0 Championship',
@@ -159,7 +159,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'suzuka',
             'okayama',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     rufgt3: {
         seriesName: 'Ruf GT3 Challenge',
@@ -178,7 +178,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'zandvoort',
             'summitPoint',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     specRacerFord: {
         seriesName: 'iRacing Spec Racer Ford Challenge',
@@ -197,7 +197,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'oultonPark',
             'spa',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     globalChallenge: {
         seriesName: 'Fanatec Global Challenge',
@@ -216,7 +216,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'tsukuba',
             'spa',
         ],
-        licenseClass: 'D',
+        licenceClass: 'D',
     },
     imsaMpc: {
         seriesName: 'IMSA Michelin Pilot Challenge',
@@ -235,7 +235,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'suzuka',
             'monza',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     radicalChallenge: {
         seriesName: 'Radical Racing Challenge',
@@ -254,7 +254,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'oultonPark',
             'watkinsGlen',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     kamel: {
         seriesName: 'Kamel GT Championship',
@@ -273,7 +273,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'spa',
             'silverstone2008',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     advancedmazda: {
         seriesName: 'Advanced Mazda MX-5 Cup Series',
@@ -292,7 +292,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'zolder',
             'leMans',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     formula3temp: {
         seriesName: 'Simucube F3 Series',
@@ -311,7 +311,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'mountPanorama',
             'spa',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     indypro: {
         seriesName: 'Indy Pro 2000 Championship',
@@ -330,7 +330,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'montreal',
             'charlotte',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     v8supercars: {
         seriesName: 'Supercars Series',
@@ -349,7 +349,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'sebring',
             'roadAmerica',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     porscheCup: {
         seriesName: 'Porsche iRacing Cup',
@@ -368,7 +368,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'suzuka',
             'mountPanorama',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     gtChallenge: {
         seriesName: 'Fanatec GT Challenge',
@@ -387,7 +387,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'limeRock',
             'monza',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     gpLegends: {
         seriesName: 'Grand Prix Legends',
@@ -406,7 +406,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'cota',
             'mountPanorama',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     imsa: {
         seriesName: 'IMSA Sportscar Championship',
@@ -433,7 +433,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'silverstone',
             'imola',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     vrsEndurance: {
         seriesName: 'VRS GT Endurance Series',
@@ -459,7 +459,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'zolder',
             'silverstone',
         ],
-        licenseClass: 'C',
+        licenceClass: 'C',
     },
     indycar: {
         seriesName: 'Verizon INDYCAR Series',
@@ -478,7 +478,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'paidOval',
             'daytona',
         ],
-        licenseClass: 'B',
+        licenceClass: 'B',
     },
     vrsSprint: {
         seriesName: 'VRS GT Sprint Series',
@@ -504,7 +504,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'zolder',
             'silverstone',
         ],
-        licenseClass: 'B',
+        licenceClass: 'B',
     },
     iLMS: {
         seriesName: 'iRacing Le Mans Series',
@@ -531,7 +531,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'imola',
             'spa',
         ],
-        licenseClass: 'B',
+        licenceClass: 'B',
     },
 
     iELMS: {
@@ -559,7 +559,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'none',
             'spa',
         ],
-        licenseClass: 'B',
+        licenceClass: 'B',
     },
 
     gtEndurance: {
@@ -579,7 +579,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'imola',
             'none',
         ],
-        licenseClass: 'B',
+        licenceClass: 'B',
     },
 
     classicLotusGP: {
@@ -599,7 +599,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'silverstone',
             'monza',
         ],
-        licenseClass: 'B',
+        licenceClass: 'B',
     },
 
     fr35: {
@@ -619,7 +619,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'sebring',
             'barcelona',
         ],
-        licenseClass: 'B',
+        licenceClass: 'B',
     },
 
     formula1: {
@@ -639,7 +639,7 @@ const fullSeasonSchedule: ScheduleObject = {
             'interlagos',
             'suzuka',
         ],
-        licenseClass: 'A',
+        licenceClass: 'A',
     },
 };
 

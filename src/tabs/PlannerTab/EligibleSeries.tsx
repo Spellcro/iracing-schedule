@@ -11,24 +11,17 @@ import {
 } from '@material-ui/core';
 import defaultCarsData from '../../data/carsData';
 
-type EligibleSeriesProps = {
+type EligibleSeriesTableProps = {
     viewingWeek: number;
     tracks: ContentObject;
-    cars: ContentObject;
+    seriesToDisplay: string[];
 };
 
-const listOfSeries: string[] = Object.keys(fullSeasonSchedule);
-const EligibleSeriesTable: React.FC<EligibleSeriesProps> = ({ viewingWeek, tracks, cars }) => {
-    // Create an array of series where at least one car is owned
-    const eligibleSeries = listOfSeries.filter((series) =>
-        fullSeasonSchedule[series].eligibleCars.some((car) => cars[car].owned)
-    );
-
-    // Filter the array to those which have a circuit this week
-    const eligibleSeriesThisWeek = eligibleSeries.filter(
-        (series) => fullSeasonSchedule[series].seriesSchedule[viewingWeek - 1] !== 'none'
-    );
-
+const EligibleSeriesTable: React.FC<EligibleSeriesTableProps> = ({
+    viewingWeek,
+    tracks,
+    seriesToDisplay,
+}) => {
     type Columns = {
         id: string;
         label: string;
@@ -55,69 +48,65 @@ const EligibleSeriesTable: React.FC<EligibleSeriesProps> = ({ viewingWeek, track
         { id: 'track', label: 'Track', width: '42%', align: 'left' },
     ];
     return (
-        <div style={{ backgroundColor: 'white' }}>
-            <TableContainer style={{ maxHeight: 600, width: '100%', margin: 'auto' }}>
-                <Table stickyHeader>
-                    <TableHead>
-                        <TableRow>
-                            {columns.map((column) => (
-                                <TableCell
-                                    key={column.id}
-                                    align='center'
-                                    style={{
-                                        width: column.width,
-                                        position: 'relative',
-                                    }}
-                                >
-                                    <span style={{ position: 'relative' }}>{column.label}</span>
-                                </TableCell>
-                            ))}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {eligibleSeriesThisWeek.map((series, index) => {
-                            const thisWeeksTrack =
-                                tracks[fullSeasonSchedule[series].seriesSchedule[viewingWeek - 1]];
+        <TableContainer style={{ maxHeight: 600, width: '100%', margin: 'auto' }}>
+            <Table stickyHeader>
+                <TableHead>
+                    <TableRow>
+                        {columns.map((column) => (
+                            <TableCell
+                                key={column.id}
+                                align='center'
+                                style={{
+                                    width: column.width,
+                                    position: 'relative',
+                                }}
+                            >
+                                <span style={{ position: 'relative' }}>{column.label}</span>
+                            </TableCell>
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {seriesToDisplay.map((series, index) => {
+                        const thisWeeksTrack =
+                            tracks[fullSeasonSchedule[series].seriesSchedule[viewingWeek - 1]];
 
-                            // Build up a list of eligible cars for the series
-                            let eligibleCars = '';
-                            fullSeasonSchedule[series].eligibleCars.forEach((car) => {
-                                eligibleCars += `${defaultCarsData[car].name}, `;
-                            });
-                            // Remove the final trailing comma
-                            eligibleCars = eligibleCars.substring(0, eligibleCars.length - 2);
-                            return (
-                                <TableRow
-                                    key={index}
-                                    className={
-                                        thisWeeksTrack.owned
-                                            ? 'EligibleContent'
-                                            : 'IneligibleContent'
-                                    }
+                        // Build up a list of eligible cars for the series
+                        let eligibleCars = '';
+                        fullSeasonSchedule[series].eligibleCars.forEach((car) => {
+                            eligibleCars += `${defaultCarsData[car].name}, `;
+                        });
+                        // Remove the final trailing comma
+                        eligibleCars = eligibleCars.substring(0, eligibleCars.length - 2);
+                        return (
+                            <TableRow
+                                key={index}
+                                className={
+                                    thisWeeksTrack.owned ? 'EligibleContent' : 'IneligibleContent'
+                                }
+                            >
+                                <TableCell key={`series_${index}`} align={columns[0].align}>
+                                    {fullSeasonSchedule[series].seriesName}
+                                </TableCell>
+                                <TableCell
+                                    key={`cars_${index}`}
+                                    align={columns[0].align}
+                                    style={{ fontSize: columns[1].fontSize }}
                                 >
-                                    <TableCell key={`series_${index}`} align={columns[0].align}>
-                                        {fullSeasonSchedule[series].seriesName}
-                                    </TableCell>
-                                    <TableCell
-                                        key={`cars_${index}`}
-                                        align={columns[0].align}
-                                        style={{ fontSize: columns[1].fontSize }}
-                                    >
-                                        {eligibleCars}
-                                    </TableCell>
-                                    <TableCell key={`license_${index}`} align={columns[2].align}>
-                                        {fullSeasonSchedule[series].licenseClass}
-                                    </TableCell>
-                                    <TableCell key={`track_${index}`} align={columns[3].align}>
-                                        {thisWeeksTrack.name}{' '}
-                                    </TableCell>
-                                </TableRow>
-                            );
-                        })}
-                    </TableBody>
-                </Table>
-            </TableContainer>
-        </div>
+                                    {eligibleCars}
+                                </TableCell>
+                                <TableCell key={`licence_${index}`} align={columns[2].align}>
+                                    {fullSeasonSchedule[series].licenceClass}
+                                </TableCell>
+                                <TableCell key={`track_${index}`} align={columns[3].align}>
+                                    {thisWeeksTrack.name}{' '}
+                                </TableCell>
+                            </TableRow>
+                        );
+                    })}
+                </TableBody>
+            </Table>
+        </TableContainer>
     );
 };
 

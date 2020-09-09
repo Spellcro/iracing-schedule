@@ -14,6 +14,10 @@ import defaultTrackData from './data/trackData';
 import defaultCarsData from './data/carsData';
 import { ContentObject } from './tabs/ContentTabs/contentTab';
 
+// New shit
+import GetCurrentWeek from './data/WeekCalculation';
+import { defaultLicenceFilters } from './tabs/PlannerTab/licenceFilters';
+
 const App = () => {
     const initialTrackData: ContentObject = window.localStorage.getItem('trackData')
         ? JSON.parse(String(window.localStorage.getItem('trackData')))
@@ -22,12 +26,16 @@ const App = () => {
         ? JSON.parse(String(window.localStorage.getItem('carData')))
         : defaultCarsData;
 
+    const currentWeek = GetCurrentWeek();
+
     // Initialise state variables
     const [activeTab, setActiveTab] = useState(
         String(window.localStorage.getItem('activeTab') || 'Help')
     );
     const [trackData, setTrackData] = useState(initialTrackData);
     const [carData, setCarData] = useState(initialCarData);
+    const [viewingWeek, setViewingWeek] = useState(currentWeek);
+    const [licenceFilters, setLicenceFilters] = useState(defaultLicenceFilters);
 
     // Set up hooks to handle saving data to browser local storage
     useEffect(() => {
@@ -81,11 +89,31 @@ const App = () => {
         setCarData(cars);
     };
 
+    const changeViewingWeek = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        setViewingWeek(Number(e.currentTarget.value));
+    };
+
+    const updateFilters = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newFilters = {
+            ...licenceFilters,
+            [e.currentTarget.value]: !licenceFilters[e.currentTarget.value],
+        };
+        setLicenceFilters(newFilters);
+    };
+
     return (
         <div>
             <MenuBar activeTab={activeTab} allTabs={listOfTabs} callback={changeTab} />
             {activeTab === listOfTabs[0] ? (
-                <PlannerTab tracks={trackData} cars={carData} />
+                <PlannerTab
+                    tracks={trackData}
+                    cars={carData}
+                    currentWeek={currentWeek}
+                    viewingWeek={viewingWeek}
+                    changeWeek={changeViewingWeek}
+                    licenceFilters={licenceFilters}
+                    updateFilters={updateFilters}
+                />
             ) : activeTab === listOfTabs[1] ? (
                 <CarsTab
                     cars={carData}
