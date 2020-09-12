@@ -13,8 +13,6 @@ import TracksTab from './tabs/ContentTabs/trackTab';
 import defaultTrackData from './data/trackData';
 import defaultCarsData from './data/carsData';
 import { ContentObject } from './tabs/ContentTabs/contentTab';
-
-// New shit
 import GetCurrentWeek from './data/WeekCalculation';
 import { defaultLicenceFilters } from './tabs/PlannerTab/licenceFilters';
 
