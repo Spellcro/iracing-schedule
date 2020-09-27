@@ -15,22 +15,22 @@ const SelectDeselectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
     updateAllItems,
 }) => {
     const SelectAll = () => {
-        let selectedAllContent = { ...content };
+        let updatedContent = { ...content };
         contentList.forEach((pieceOfContent) => {
-            if (selectedAllContent[pieceOfContent].free === false) {
-                selectedAllContent[pieceOfContent].owned = true;
+            if (updatedContent[pieceOfContent].free === false) {
+                updatedContent[pieceOfContent].owned = true;
             }
         });
-        updateAllItems(selectedAllContent);
+        updateAllItems(updatedContent);
     };
     const DeselectAll = () => {
-        let deselectAllContent = { ...content };
+        let updatedContent = { ...content };
         contentList.forEach((pieceOfContent) => {
-            if (deselectAllContent[pieceOfContent].free === false) {
-                deselectAllContent[pieceOfContent].owned = false;
+            if (updatedContent[pieceOfContent].free === false) {
+                updatedContent[pieceOfContent].owned = false;
             }
         });
-        updateAllItems(deselectAllContent);
+        updateAllItems(updatedContent);
     };
 
     return (
