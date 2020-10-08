@@ -9,22 +9,25 @@ import PlannerTab from './tabs/PlannerTab/plannerTab';
 import CarsTab from './tabs/ContentTabs/carsTab';
 import TracksTab from './tabs/ContentTabs/trackTab';
 
+// Import initial setup functions
+import { SetInitialCarData, SetInitialTrackData } from './helpers/initialSetupFunctions';
 // Import Other Data
-import defaultTrackData from './data/trackData';
-import defaultCarsData from './data/carsData';
 import { ContentObject } from './tabs/ContentTabs/contentTab';
 import GetCurrentWeek from './data/WeekCalculation';
 import { defaultLicenceFilters } from './tabs/PlannerTab/licenceFilters';
 
 const App = () => {
-    const initialTrackData: ContentObject = window.localStorage.getItem('trackData')
-        ? JSON.parse(String(window.localStorage.getItem('trackData')))
-        : defaultTrackData;
-    const initialCarData: ContentObject = window.localStorage.getItem('carData')
-        ? JSON.parse(String(window.localStorage.getItem('carData')))
-        : defaultCarsData;
-
     const currentWeek = GetCurrentWeek();
+
+    const initialOwnedCars: string[] = window.localStorage.getItem('ownedCars')
+        ? JSON.parse(String(window.localStorage.getItem('ownedCars')))
+        : [];
+    const initialOwnedTracks: string[] = window.localStorage.getItem('ownedTracks')
+        ? JSON.parse(String(window.localStorage.getItem('ownedTracks')))
+        : [];
+
+    const initialCarData = SetInitialCarData(initialOwnedCars);
+    const initialTrackData = SetInitialTrackData(initialOwnedTracks);
 
     // Initialise state variables
     const [activeTab, setActiveTab] = useState(
@@ -34,15 +37,17 @@ const App = () => {
     const [carData, setCarData] = useState(initialCarData);
     const [viewingWeek, setViewingWeek] = useState(currentWeek);
     const [licenceFilters, setLicenceFilters] = useState(defaultLicenceFilters);
+    const [ownedCars, setOwnedCars] = useState(initialOwnedCars);
+    const [ownedTracks, setOwnedTracks] = useState(initialOwnedTracks);
 
     // Set up hooks to handle saving data to browser local storage
     useEffect(() => {
-        window.localStorage.setItem('carData', JSON.stringify(carData));
-    }, [carData]);
+        window.localStorage.setItem('ownedCars', JSON.stringify(ownedCars));
+    }, [ownedCars]);
 
     useEffect(() => {
-        window.localStorage.setItem('trackData', JSON.stringify(trackData));
-    }, [trackData]);
+        window.localStorage.setItem('ownedTracks', JSON.stringify(ownedTracks));
+    }, [ownedTracks]);
 
     useEffect(() => {
         window.localStorage.setItem('activeTab', activeTab);
@@ -67,6 +72,14 @@ const App = () => {
                 owned: !trackData[trackName].owned,
             },
         });
+        let updatedTracks = [...ownedTracks];
+        const i = updatedTracks.indexOf(trackName);
+        if (i === -1) {
+            updatedTracks.push(trackName);
+        } else {
+            updatedTracks.splice(i, 1);
+        }
+        setOwnedTracks(updatedTracks);
     };
 
     const updateOwnedCar = (carName: string) => {
@@ -77,14 +90,24 @@ const App = () => {
                 owned: !carData[carName].owned,
             },
         });
+        let updatedCars = [...ownedCars];
+        const i = updatedCars.indexOf(carName);
+        if (i === -1) {
+            updatedCars.push(carName);
+        } else {
+            updatedCars.splice(i, 1);
+        }
+        setOwnedCars(updatedCars);
     };
 
-    const updateAllTracks = (tracks: ContentObject) => {
+    const updateAllTracks = (tracks: ContentObject, tracksList: string[]) => {
         setTrackData(tracks);
+        setOwnedTracks(tracksList);
     };
 
-    const updateAllCars = (cars: ContentObject) => {
+    const updateAllCars = (cars: ContentObject, carsList: string[]) => {
         setCarData(cars);
+        setOwnedCars(carsList);
     };
 
     const changeViewingWeek = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -116,6 +139,7 @@ const App = () => {
                 <CarsTab
                     cars={carData}
                     carNames={carList}
+                    ownedCars={ownedCars}
                     updateOneItem={updateOwnedCar}
                     updateAllItems={updateAllCars}
                 />
@@ -123,6 +147,7 @@ const App = () => {
                 <TracksTab
                     tracks={trackData}
                     trackNames={trackList}
+                    ownedTracks={ownedTracks}
                     updateOneItem={updateOwnedTrack}
                     updateAllItems={updateAllTracks}
                 />

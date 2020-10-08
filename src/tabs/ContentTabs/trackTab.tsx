@@ -4,13 +4,15 @@ import ContentTab, { ContentObject } from './contentTab';
 type TracksTabProps = {
     tracks: ContentObject;
     trackNames: string[];
-    updateOneItem: (car: string) => void;
-    updateAllItems: (tracks: ContentObject) => void;
+    ownedTracks: string[];
+    updateOneItem: (track: string) => void;
+    updateAllItems: (allTracks: ContentObject, updatedTracksList: string[]) => void;
 };
 
 const TracksTab: React.FC<TracksTabProps> = ({
     tracks,
     trackNames,
+    ownedTracks,
     updateOneItem,
     updateAllItems,
 }) => {
@@ -19,6 +21,7 @@ const TracksTab: React.FC<TracksTabProps> = ({
             content={tracks}
             contentList={trackNames}
             imageFolder={'trackImages'}
+            ownedContent={ownedTracks}
             updateOneItem={updateOneItem}
             updateAllItems={updateAllItems}
         />

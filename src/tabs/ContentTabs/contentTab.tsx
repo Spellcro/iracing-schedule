@@ -19,14 +19,16 @@ type ContentTabProps = {
     content: ContentObject;
     contentList: string[];
     imageFolder: string;
+    ownedContent: string[];
     updateOneItem: (pieceOfContent: string) => void;
-    updateAllItems: (allContent: ContentObject) => void;
+    updateAllItems: (allContent: ContentObject, updatedContentList: string[]) => void;
 };
 
 const ContentTab: React.FC<ContentTabProps> = ({
     content,
     contentList,
     imageFolder,
+    ownedContent,
     updateOneItem,
     updateAllItems,
 }) => {
@@ -36,6 +38,7 @@ const ContentTab: React.FC<ContentTabProps> = ({
             <SelectDeselectAllButtons
                 content={content}
                 contentList={paidContent}
+                ownedContent={ownedContent}
                 updateAllItems={updateAllItems}
             />
 

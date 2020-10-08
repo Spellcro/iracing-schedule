@@ -5,16 +5,24 @@ import { ContentObject } from './contentTab';
 type CarsTabProps = {
     cars: ContentObject;
     carNames: string[];
+    ownedCars: string[];
     updateOneItem: (car: string) => void;
-    updateAllItems: (cars: ContentObject) => void;
+    updateAllItems: (allCars: ContentObject, updatedCarsList: string[]) => void;
 };
 
-const CarsTab: React.FC<CarsTabProps> = ({ cars, carNames, updateOneItem, updateAllItems }) => {
+const CarsTab: React.FC<CarsTabProps> = ({
+    cars,
+    carNames,
+    ownedCars,
+    updateOneItem,
+    updateAllItems,
+}) => {
     return (
         <ContentTab
             content={cars}
             contentList={carNames}
             imageFolder={'carImages'}
+            ownedContent={ownedCars}
             updateOneItem={updateOneItem}
             updateAllItems={updateAllItems}
         />
