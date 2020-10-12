@@ -1,6 +1,6 @@
 import React from 'react';
 import ContentTab from './contentTab';
-import { ContentObject } from './contentTab';
+import { ContentObject } from '../../data/ContentData/ContentTypes';
 
 type CarsTabProps = {
     cars: ContentObject;

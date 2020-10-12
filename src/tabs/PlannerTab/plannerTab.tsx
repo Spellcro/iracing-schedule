@@ -1,9 +1,9 @@
 import React from 'react';
-import { ContentObject } from '../ContentTabs/contentTab';
-import WeekSelector from './weekSelector';
+import { ContentObject } from '../../data/ContentData/ContentTypes';
+import WeekSelector from './WeekSelector';
 import SeriesTable from './SeriesTable';
 import { seasonLength } from '../../data/WeekCalculation';
-import LicenceFilters, { LicenceFiltersType } from './licenceFilters';
+import LicenceFilters, { LicenceFiltersType } from './LicenceFilters';
 
 // Import styles
 import '../../styles/PlannerTab.css';

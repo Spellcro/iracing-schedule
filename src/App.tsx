@@ -4,17 +4,17 @@ import React, { useState, useEffect } from 'react';
 import MenuBar from './menuBar';
 
 // Import Tabs
-import HelpTab from './tabs/helpTab';
-import PlannerTab from './tabs/PlannerTab/plannerTab';
+import HelpTab from './tabs/HelpTab';
+import PlannerTab from './tabs/PlannerTab/PlannerTab';
 import CarsTab from './tabs/ContentTabs/carsTab';
 import TracksTab from './tabs/ContentTabs/trackTab';
 
 // Import initial setup functions
 import { SetInitialCarData, SetInitialTrackData } from './helpers/initialSetupFunctions';
 // Import Other Data
-import { ContentObject } from './tabs/ContentTabs/contentTab';
+import { ContentObject } from './data/ContentData/ContentTypes';
 import GetCurrentWeek from './data/WeekCalculation';
-import { defaultLicenceFilters } from './tabs/PlannerTab/licenceFilters';
+import { defaultLicenceFilters } from './tabs/PlannerTab/LicenceFilters';
 
 const App = () => {
     const currentWeek = GetCurrentWeek();

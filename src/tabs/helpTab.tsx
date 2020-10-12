@@ -17,12 +17,11 @@ const HelpTab = () => {
                     including road courses that are part of ovals, such as Daytona Road) are listed
                     as either a free or paid oval.
                     <br />
-                    All images on this site are taken from{' '}
-                    <a href='https://iracing.com'>iRacing.com</a>
-                    <br /> This app was made with React and TypeScript. Created by Adam Wilmott.
+                    All images on this site are from <a href='https://iracing.com'>iRacing.com</a>
+                    <br /> This app was created by Adam Wilmott using React and TypeScript.
                     <br />
-                    Source code available on{' '}
-                    <a href='https://github.com/Spellcro/iracing-schedule'>github</a>.
+                    Source code available{' '}
+                    <a href='https://github.com/Spellcro/iracing-schedule'>on github</a>.
                 </p>
             </div>
         </div>

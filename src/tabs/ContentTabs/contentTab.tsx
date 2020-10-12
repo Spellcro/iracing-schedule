@@ -3,18 +3,11 @@ import { Img } from 'react-image';
 import { Spinner } from 'react-bootstrap';
 import { ContentTabWrapper } from '../../styles/ContentTab.styles';
 import SelectDeselectAllButtons from './selectDeselectAllButtons';
+import { ContentObject } from '../../data/ContentData/ContentTypes';
 
 // Import styles
 import '../../styles/ContentTab.css';
 
-export type ContentObject = {
-    [key: string]: ContentDetails;
-};
-export type ContentDetails = {
-    name: string;
-    free: boolean;
-    owned: boolean;
-};
 type ContentTabProps = {
     content: ContentObject;
     contentList: string[];

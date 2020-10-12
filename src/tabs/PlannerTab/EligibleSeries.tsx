@@ -1,6 +1,6 @@
 import React from 'react';
 import fullSeasonSchedule from '../../data/scheduleData';
-import { ContentObject } from '../ContentTabs/contentTab';
+import { ContentObject } from '../../data/ContentData/ContentTypes';
 import {
     Table,
     TableContainer,
@@ -9,7 +9,7 @@ import {
     TableHead,
     TableRow,
 } from '@material-ui/core';
-import defaultCarsData from '../../data/carsData';
+import defaultCarsData from '../../data/ContentData/carsData';
 
 type EligibleSeriesTableProps = {
     viewingWeek: number;

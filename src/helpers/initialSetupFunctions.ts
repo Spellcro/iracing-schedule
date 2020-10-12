@@ -1,5 +1,5 @@
-import defaultCarsData from '../data/carsData';
-import defaultTrackData from '../data/trackData';
+import defaultCarsData from '../data/ContentData/carsData';
+import defaultTrackData from '../data/ContentData/trackData';
 
 export const SetInitialCarData = (localCarData: string[]) => {
     let carData = JSON.parse(JSON.stringify(defaultCarsData));

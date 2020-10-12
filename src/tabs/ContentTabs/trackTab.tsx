@@ -1,5 +1,6 @@
 import React from 'react';
-import ContentTab, { ContentObject } from './contentTab';
+import ContentTab from './contentTab';
+import { ContentObject } from '../../data/ContentData/ContentTypes';
 
 type TracksTabProps = {
     tracks: ContentObject;

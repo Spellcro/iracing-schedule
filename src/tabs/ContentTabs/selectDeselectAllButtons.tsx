@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { ContentObject } from './contentTab';
+import { ContentObject } from '../../data/ContentData/ContentTypes';
 import '../../styles/ContentTab.css';
 
 type SelectDeselectAllButtonsProps = {

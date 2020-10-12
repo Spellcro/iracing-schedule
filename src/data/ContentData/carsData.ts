@@ -1,4 +1,4 @@
-import { ContentObject } from '../tabs/ContentTabs/contentTab';
+import { ContentObject } from './ContentTypes';
 
 const defaultCarsData: ContentObject = {
     astonDbr9: {
