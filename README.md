@@ -1,3 +1,10 @@
+# About
+
+This tool was built as a personal project to learn React with TypeScript, as well as aid with future schedule planning throughout an iRacing season. <br />
+It is hosted using `surge` at http://iracing-schedule.surge.sh/. 
+
+# create-react-app
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
