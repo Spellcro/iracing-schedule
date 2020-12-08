@@ -34,6 +34,12 @@ const defaultCarsData: ContentObject = {
         owned: false,
     },
 
+    bmwm6gt3: {
+        name: 'BMW M6 GT3 [PH]',
+        free: false,
+        owned: false,
+    },
+
     bmwm8gte: {
         name: 'BMW M8 GTE',
         free: false,
@@ -107,6 +113,12 @@ const defaultCarsData: ContentObject = {
 
     fr35: {
         name: 'Formula Renault 3.5',
+        free: false,
+        owned: false,
+    },
+
+    dallarair01: {
+        name: 'Dallara iR-01 [PH]',
         free: false,
         owned: false,
     },

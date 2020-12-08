@@ -101,6 +101,11 @@ const defaultTrackData: ContentObject = {
         free: true,
         owned: true,
     },
+    longBeach: {
+        name: 'Long Beach [PLACEHOLDER]',
+        free: false,
+        owned: false,
+    },
     midOhio: {
         name: 'Mid-Ohio Sportscar Course',
         free: false,
