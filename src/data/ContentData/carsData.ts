@@ -34,8 +34,8 @@ const defaultCarsData: ContentObject = {
         owned: false,
     },
 
-    bmwm6gt3: {
-        name: 'BMW M6 GT3 [PH]',
+    bmwm4gt3: {
+        name: 'BMW M4 GT3 - Prototype',
         free: false,
         owned: false,
     },
@@ -47,7 +47,7 @@ const defaultCarsData: ContentObject = {
     },
 
     bmwz4gt3: {
-        name: 'BMW Z4 GT3',
+        name: '[Legacy] BMW Z4 GT3',
         free: false,
         owned: false,
     },
@@ -118,7 +118,7 @@ const defaultCarsData: ContentObject = {
     },
 
     dallarair01: {
-        name: 'Dallara iR-01 [PH]',
+        name: 'Dallara iR-01',
         free: false,
         owned: false,
     },
@@ -139,6 +139,12 @@ const defaultCarsData: ContentObject = {
         name: 'Kia Optima',
         free: true,
         owned: true,
+    },
+
+    lamboHuracanGt3: {
+        name: 'Lamborghini Huracan GT3 EVO',
+        free: false,
+        owned: false,
     },
 
     lotus49: {

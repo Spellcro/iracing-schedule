@@ -65,13 +65,25 @@ const App = () => {
     };
 
     const updateOwnedTrack = (trackName: string) => {
-        setTrackData({
+        let newTrackData = {
             ...trackData,
             [trackName]: {
                 ...trackData[trackName],
                 owned: !trackData[trackName].owned,
             },
-        });
+        };
+        // If the item being changed is one of the Nurburgring tracks, set the owned status of 'Nurburgring Combined'.
+        if (trackName === 'nurbNordschleife' || trackName === 'nurbGP') {
+            if (
+                newTrackData['nurbGP'].owned === true &&
+                newTrackData['nurbNordschleife'].owned === true
+            ) {
+                newTrackData['nurb24'].owned = true;
+            } else {
+                newTrackData['nurb24'].owned = false;
+            }
+        }
+        setTrackData(newTrackData);
         let updatedTracks = [...ownedTracks];
         const i = updatedTracks.indexOf(trackName);
         if (i === -1) {

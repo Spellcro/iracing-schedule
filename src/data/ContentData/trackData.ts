@@ -102,7 +102,7 @@ const defaultTrackData: ContentObject = {
         owned: true,
     },
     longBeach: {
-        name: 'Long Beach [PLACEHOLDER]',
+        name: 'Long Beach Street Circuit',
         free: false,
         owned: false,
     },

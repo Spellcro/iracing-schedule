@@ -413,9 +413,10 @@ const fullSeasonSchedule: ScheduleObject = {
         seriesName: 'VRS GT Endurance Series',
         eligibleCars: [
             'audir8lms',
-            'bmwz4gt3',
+            'bmwm4gt3',
             'ferrari488gt3',
             'fordgt',
+            'lamboHuracanGt3',
             'mclarenmp412c',
             'amggt3',
         ],
@@ -476,8 +477,8 @@ const fullSeasonSchedule: ScheduleObject = {
     imsa: {
         seriesName: 'IMSA Sportscar Championship',
         eligibleCars: [
-            'audir8lms',
-            'amggt3',
+            'bmwm4gt3',
+            'lamboHuracanGt3',
             'bmwm8gte',
             'corvettec8r',
             'ferrari488gte',
@@ -504,9 +505,10 @@ const fullSeasonSchedule: ScheduleObject = {
         seriesName: 'VRS GT Sprint Series',
         eligibleCars: [
             'audir8lms',
-            'bmwz4gt3',
+            'bmwm4gt3',
             'ferrari488gt3',
             'fordgt',
+            'lamboHuracanGt3',
             'mclarenmp412c',
             'amggt3',
         ],
@@ -588,7 +590,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     iLMS: {
-        seriesName: 'iRacing Le Mans Series',
+        seriesName: 'European Sprint Series',
         eligibleCars: [
             'corvettec8r',
             'ferrari488gte',
@@ -616,7 +618,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     iELMS: {
-        seriesName: 'iRacing Endurance Le Mans Series',
+        seriesName: 'European Endurance Series',
         eligibleCars: [
             'corvettec8r',
             'ferrari488gte',
