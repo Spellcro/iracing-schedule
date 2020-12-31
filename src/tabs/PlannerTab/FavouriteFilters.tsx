@@ -8,6 +8,8 @@ type FavouriteFiltersProps = {
     updateFilterFavouriteCars: (e: React.ChangeEvent<HTMLInputElement>) => void;
     filterFavouriteTracks: boolean;
     updateFilterFavouriteTracks: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    filterFavouriteSeries: boolean;
+    updateFilterFavouriteSeries: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const FavouriteFilters: React.FC<FavouriteFiltersProps> = ({
@@ -15,6 +17,8 @@ const FavouriteFilters: React.FC<FavouriteFiltersProps> = ({
     updateFilterFavouriteCars,
     filterFavouriteTracks,
     updateFilterFavouriteTracks,
+    filterFavouriteSeries,
+    updateFilterFavouriteSeries,
 }) => {
     return (
         <div className='FavouriteFiltersContainer'>
@@ -27,6 +31,10 @@ const FavouriteFilters: React.FC<FavouriteFiltersProps> = ({
                     <FilterTracks
                         filterFavouriteTracks={filterFavouriteTracks}
                         updateFilterFavouriteTracks={updateFilterFavouriteTracks}
+                    />
+                    <FilterSeries
+                        filterFavouriteSeries={filterFavouriteSeries}
+                        updateFilterFavouriteSeries={updateFilterFavouriteSeries}
                     />
                 </FormGroup>
             </FormControl>
@@ -75,4 +83,26 @@ const FilterTracks: React.FC<{
         />
     );
 };
+
+const FilterSeries: React.FC<{
+    filterFavouriteSeries: boolean;
+    updateFilterFavouriteSeries: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}> = ({ filterFavouriteSeries, updateFilterFavouriteSeries }) => {
+    return (
+        <FormControlLabel
+            value='favouriteSeries'
+            control={
+                <Checkbox
+                    value='FavouriteSeries'
+                    color='secondary'
+                    onChange={updateFilterFavouriteSeries}
+                    checked={filterFavouriteSeries}
+                />
+            }
+            label='Show only Favourite Series'
+            labelPlacement='top'
+        />
+    );
+};
+
 export default FavouriteFilters;

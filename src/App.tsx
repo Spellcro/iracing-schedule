@@ -32,6 +32,9 @@ const App = () => {
     const initialFavouriteTracks: string[] = window.localStorage.getItem('favouriteTracks')
         ? JSON.parse(String(window.localStorage.getItem('favouriteTracks')))
         : [];
+    const initialFavouriteSeries: string[] = window.localStorage.getItem('favouriteSeries')
+        ? JSON.parse(String(window.localStorage.getItem('favouriteSeries')))
+        : [];
 
     const initialCarData = SetInitialCarData(initialOwnedCars);
     const initialTrackData = SetInitialTrackData(initialOwnedTracks);
@@ -48,8 +51,10 @@ const App = () => {
     const [ownedTracks, setOwnedTracks] = useState(initialOwnedTracks);
     const [favouriteCars, setFavouriteCars] = useState(initialFavouriteCars);
     const [favouriteTracks, setFavouriteTracks] = useState(initialFavouriteTracks);
+    const [favouriteSeries, setFavouriteSeries] = useState(initialFavouriteSeries);
     const [filterFavouriteCars, setFilterFavouriteCars] = useState(false);
     const [filterFavouriteTracks, setFilterFavouriteTracks] = useState(false);
+    const [filterFavouriteSeries, setFilterFavouriteSeries] = useState(false);
 
     // Set up hooks to handle saving data to browser local storage
     // Owned Cars/Tracks
@@ -65,13 +70,16 @@ const App = () => {
         window.localStorage.setItem('activeTab', activeTab);
     }, [activeTab]);
 
-    // Favourited Cars/Tracks
+    // Favourited Cars/Tracks/Series
     useEffect(() => {
         window.localStorage.setItem('favouriteCars', JSON.stringify(favouriteCars));
     }, [favouriteCars]);
     useEffect(() => {
         window.localStorage.setItem('favouriteTracks', JSON.stringify(favouriteTracks));
     }, [favouriteTracks]);
+    useEffect(() => {
+        window.localStorage.setItem('favouriteSeries', JSON.stringify(favouriteSeries));
+    }, [favouriteSeries]);
 
     // Create an array of tab names
     const listOfTabs: string[] = ['Planner', 'Set Cars', 'Set Tracks', 'Help'];
@@ -174,11 +182,31 @@ const App = () => {
         setFavouriteTracks(updatedFavouriteTracks);
     };
 
+    const updateFavouriteSeries = (series: string) => {
+        let updatedFavouriteSeries = [...favouriteSeries];
+        const i = updatedFavouriteSeries.indexOf(series);
+        if (i === -1) {
+            updatedFavouriteSeries.push(series);
+        } else {
+            updatedFavouriteSeries.splice(i, 1);
+        }
+        setFavouriteSeries(updatedFavouriteSeries);
+    };
+
     const updateFilterFavouriteCars = (event: React.ChangeEvent<HTMLInputElement>) => {
         setFilterFavouriteCars(!filterFavouriteCars);
+        setFilterFavouriteSeries(false);
+        setFilterFavouriteTracks(false);
     };
     const updateFilterFavouriteTracks = (event: React.ChangeEvent<HTMLInputElement>) => {
         setFilterFavouriteTracks(!filterFavouriteTracks);
+        setFilterFavouriteSeries(false);
+        setFilterFavouriteCars(false);
+    };
+    const updateFilterFavouriteSeries = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setFilterFavouriteSeries(!filterFavouriteSeries);
+        setFilterFavouriteCars(false);
+        setFilterFavouriteTracks(false);
     };
     return (
         <div>
@@ -198,6 +226,9 @@ const App = () => {
                     updateFilterFavouriteCars={updateFilterFavouriteCars}
                     updateFilterFavouriteTracks={updateFilterFavouriteTracks}
                     filterFavouriteTracks={filterFavouriteTracks}
+                    updateFavouriteSeries={updateFavouriteSeries}
+                    filterFavouriteSeries={filterFavouriteSeries}
+                    updateFilterFavouriteSeries={updateFilterFavouriteSeries}
                 />
             ) : activeTab === listOfTabs[1] ? (
                 <CarsTab

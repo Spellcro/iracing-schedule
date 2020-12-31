@@ -11,6 +11,7 @@ type SeriesTableProps = {
     filters: { [key: string]: boolean };
     filterFavouriteCars: boolean;
     filterFavouriteTracks: boolean;
+    filterFavouriteSeries: boolean;
 };
 
 const listOfSeries: string[] = Object.keys(fullSeasonSchedule);
@@ -22,6 +23,7 @@ const SeriesTable: React.FC<SeriesTableProps> = ({
     filters,
     filterFavouriteCars,
     filterFavouriteTracks,
+    filterFavouriteSeries,
 }) => {
     // Create an array of series where at least one car is owned
     const eligibleSeries = listOfSeries.filter((series) =>
@@ -74,6 +76,18 @@ const SeriesTable: React.FC<SeriesTableProps> = ({
                 ) >= 0
         );
         filteredEligibleSeries = [...filteredForFavouriteTracks];
+    }
+
+    // Filter for favourite series if applicable
+    if (filterFavouriteSeries) {
+        const favouriteSeries: string[] = JSON.parse(
+            String(window.localStorage.getItem('favouriteSeries'))
+        );
+        let filteredForFavouriteSeries = filteredEligibleSeries.filter(
+            (series) => favouriteSeries.indexOf(series) >= 0
+        );
+
+        filteredEligibleSeries = [...filteredForFavouriteSeries];
     }
 
     return (

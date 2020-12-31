@@ -249,7 +249,7 @@ const fullSeasonSchedule: ScheduleObject = {
         licenceClass: 'C',
     },
 
-    formula3temp: {
+    formula3: {
         seriesName: 'Apex Racing Academy F3 Championship',
         eligibleCars: ['dallaraf3'],
         seriesSchedule: [

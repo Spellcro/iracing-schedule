@@ -20,10 +20,13 @@ type PlannerTabProps = {
     updateFilters: (e: React.ChangeEvent<HTMLInputElement>) => void;
     updateFavouriteCars: (item: string) => void;
     updateFavouriteTracks: (item: string) => void;
+    updateFavouriteSeries: (item: string) => void;
     filterFavouriteCars: boolean;
     updateFilterFavouriteCars: (e: React.ChangeEvent<HTMLInputElement>) => void;
     filterFavouriteTracks: boolean;
     updateFilterFavouriteTracks: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    filterFavouriteSeries: boolean;
+    updateFilterFavouriteSeries: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const PlannerTab: React.FC<PlannerTabProps> = ({
@@ -36,10 +39,13 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
     updateFilters,
     updateFavouriteCars,
     updateFavouriteTracks,
+    updateFavouriteSeries,
     filterFavouriteCars,
     updateFilterFavouriteCars,
     filterFavouriteTracks,
     updateFilterFavouriteTracks,
+    filterFavouriteSeries,
+    updateFilterFavouriteSeries,
 }) => {
     return (
         <div className='PlannerTabWrapper'>
@@ -58,16 +64,17 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
 
             <LicenceFilters licenceFilters={licenceFilters} updateFilters={updateFilters} />
             <SetFavourites
-                carsList={Object.keys(cars)}
-                trackList={Object.keys(tracks)}
                 updateFavouriteCars={updateFavouriteCars}
                 updateFavouriteTracks={updateFavouriteTracks}
+                updateFavouriteSeries={updateFavouriteSeries}
             />
             <FavouriteFilters
                 filterFavouriteCars={filterFavouriteCars}
                 updateFilterFavouriteCars={updateFilterFavouriteCars}
                 filterFavouriteTracks={filterFavouriteTracks}
                 updateFilterFavouriteTracks={updateFilterFavouriteTracks}
+                filterFavouriteSeries={filterFavouriteSeries}
+                updateFilterFavouriteSeries={updateFilterFavouriteSeries}
             />
             <div className='PlannerTableContainer'>
                 <SeriesTable
@@ -77,6 +84,7 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
                     filters={licenceFilters}
                     filterFavouriteCars={filterFavouriteCars}
                     filterFavouriteTracks={filterFavouriteTracks}
+                    filterFavouriteSeries={filterFavouriteSeries}
                 />
             </div>
         </div>
