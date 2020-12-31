@@ -66,16 +66,12 @@ const SetFavouriteCars: React.FC<SetFavouritesButtonProps> = ({
             <Dialog
                 open={showModal}
                 onClose={closeModal}
-                aria-labelledby='simple-modal-title'
-                style={{
-                    width: '40%',
-                    minWidth: '400px',
-                    maxWidth: '800px',
-                    textAlign: 'center',
-                    margin: 'auto',
-                }}
+                aria-labelledby='favourite-cars'
+                className='set-favourites-dialog'
             >
-                <DialogTitle>Set Favourite Cars</DialogTitle>
+                <DialogTitle style={{ textAlign: 'center', fontSize: '30px' }}>
+                    Set Favourite Cars
+                </DialogTitle>
                 <DialogContent>
                     <div
                         style={{
@@ -144,16 +140,12 @@ const SetFavouriteTracks: React.FC<SetFavouritesButtonProps> = ({
             <Dialog
                 open={showModal}
                 onClose={closeModal}
-                aria-labelledby='simple-modal-title'
-                style={{
-                    width: '40%',
-                    minWidth: '400px',
-                    maxWidth: '800px',
-                    textAlign: 'center',
-                    margin: 'auto',
-                }}
+                aria-labelledby='favourite-tracks'
+                className='set-favourites-dialog'
             >
-                <DialogTitle>Set Favourite Tracks</DialogTitle>
+                <DialogTitle style={{ textAlign: 'center', fontSize: '30px' }}>
+                    Set Favourite Tracks
+                </DialogTitle>
                 <DialogContent>
                     <div
                         style={{
