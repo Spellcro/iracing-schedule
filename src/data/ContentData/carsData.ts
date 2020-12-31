@@ -6,6 +6,7 @@ const defaultCarsData: ContentObject = {
         free: false,
         owned: false,
     },
+
     audi90gto: {
         name: 'Audi 90 GTO',
         free: false,
@@ -23,11 +24,13 @@ const defaultCarsData: ContentObject = {
         free: false,
         owned: false,
     },
+
     audirs3lms: {
         name: 'Audi RS3 LMS',
         free: false,
         owned: false,
     },
+
     bmwm4gt4: {
         name: 'BMW M4 GT4',
         free: false,
@@ -57,18 +60,27 @@ const defaultCarsData: ContentObject = {
         free: true,
         owned: true,
     },
+
     corvettec6r: {
         name: 'Chevrolet Corvette C6.R GT1',
         free: false,
         owned: false,
     },
+
     corvettec8r: {
         name: 'Chevrolet Corvette C8.R',
         free: false,
         owned: false,
     },
+
     dallaraf3: {
         name: 'Dallara F3',
+        free: false,
+        owned: false,
+    },
+
+    dallarair01: {
+        name: 'Dallara iR-01',
         free: false,
         owned: false,
     },
@@ -90,21 +102,25 @@ const defaultCarsData: ContentObject = {
         free: false,
         owned: false,
     },
+
     fordgt: {
         name: 'Ford GT GT2/GT3',
         free: false,
         owned: false,
     },
+
     fordgte: {
         name: 'Ford GT GTE',
         free: false,
         owned: false,
     },
+
     fordFR500: {
         name: 'Ford Mustang FR500S',
         free: false,
         owned: false,
     },
+
     fr20: {
         name: 'Formula Renault 2.0',
         free: false,
@@ -117,10 +133,10 @@ const defaultCarsData: ContentObject = {
         owned: false,
     },
 
-    dallarair01: {
-        name: 'Dallara iR-01',
-        free: false,
-        owned: false,
+    mazdamx5: {
+        name: 'Global Mazda MX-5',
+        free: true,
+        owned: true,
     },
 
     dallarair18: {
@@ -158,11 +174,7 @@ const defaultCarsData: ContentObject = {
         free: false,
         owned: false,
     },
-    mazdamx5: {
-        name: 'Global Mazda MX-5',
-        free: true,
-        owned: true,
-    },
+
     mclarenmp430: {
         name: 'McLaren Honda MP4-30',
         free: false,
