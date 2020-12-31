@@ -4,7 +4,6 @@ import { ContentObject } from '../../data/ContentData/ContentTypes';
 
 type TracksTabProps = {
     tracks: ContentObject;
-    trackNames: string[];
     ownedTracks: string[];
     updateOneItem: (track: string) => void;
     updateAllItems: (allTracks: ContentObject, updatedTracksList: string[]) => void;
@@ -12,11 +11,11 @@ type TracksTabProps = {
 
 const TracksTab: React.FC<TracksTabProps> = ({
     tracks,
-    trackNames,
     ownedTracks,
     updateOneItem,
     updateAllItems,
 }) => {
+    const trackNames = Object.keys(tracks);
     return (
         <ContentTab
             content={tracks}

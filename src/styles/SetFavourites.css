@@ -1,0 +1,22 @@
+.FavouritesWrapper {
+    padding: 0.4rem;
+}
+
+.SetFavouritesButton {
+    margin: 0.4rem !important;
+}
+.SetFavouritesButton:hover {
+    box-shadow: black 1px 3px 6px;
+    font-weight: 600;
+    color: rgb(245, 0, 87);
+}
+
+.SetFavouritesModal {
+    position: 'absolute';
+    text-align: center;
+    width: 40%;
+    max-width: 650px;
+    background-color: 'white';
+    border: '2px solid #000';
+    box-shadow: '2px 2px';
+}

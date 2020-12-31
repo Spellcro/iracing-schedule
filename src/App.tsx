@@ -25,6 +25,12 @@ const App = () => {
     const initialOwnedTracks: string[] = window.localStorage.getItem('ownedTracks')
         ? JSON.parse(String(window.localStorage.getItem('ownedTracks')))
         : [];
+    const initialFavouriteCars: string[] = window.localStorage.getItem('favouriteCars')
+        ? JSON.parse(String(window.localStorage.getItem('favouriteCars')))
+        : [];
+    const initialFavouriteTracks: string[] = window.localStorage.getItem('favouriteTracks')
+        ? JSON.parse(String(window.localStorage.getItem('favouriteTracks')))
+        : [];
 
     const initialCarData = SetInitialCarData(initialOwnedCars);
     const initialTrackData = SetInitialTrackData(initialOwnedTracks);
@@ -39,24 +45,35 @@ const App = () => {
     const [licenceFilters, setLicenceFilters] = useState(defaultLicenceFilters);
     const [ownedCars, setOwnedCars] = useState(initialOwnedCars);
     const [ownedTracks, setOwnedTracks] = useState(initialOwnedTracks);
+    const [favouriteCars, setFavouriteCars] = useState(initialFavouriteCars);
+    const [favouriteTracks, setFavouriteTracks] = useState(initialFavouriteTracks);
+    const [filterFavouriteCars, setFilterFavouriteCars] = useState(false);
+    const [filterFavouriteTracks, setFilterFavouriteTracks] = useState(false);
 
     // Set up hooks to handle saving data to browser local storage
+    // Owned Cars/Tracks
     useEffect(() => {
         window.localStorage.setItem('ownedCars', JSON.stringify(ownedCars));
     }, [ownedCars]);
-
     useEffect(() => {
         window.localStorage.setItem('ownedTracks', JSON.stringify(ownedTracks));
     }, [ownedTracks]);
 
+    // Current tab
     useEffect(() => {
         window.localStorage.setItem('activeTab', activeTab);
     }, [activeTab]);
 
-    // Create an array of tabs, car names, track names.
+    // Favourited Cars/Tracks
+    useEffect(() => {
+        window.localStorage.setItem('favouriteCars', JSON.stringify(favouriteCars));
+    }, [favouriteCars]);
+    useEffect(() => {
+        window.localStorage.setItem('favouriteTracks', JSON.stringify(favouriteTracks));
+    }, [favouriteTracks]);
+
+    // Create an array of tab names
     const listOfTabs: string[] = ['Planner', 'Set Cars', 'Set Tracks', 'Help'];
-    const trackList: string[] = Object.keys(trackData);
-    const carList: string[] = Object.keys(carData);
 
     // Create functions to utilise setState for the site
 
@@ -134,6 +151,34 @@ const App = () => {
         setLicenceFilters(newFilters);
     };
 
+    const updateFavouriteCars = (car: string) => {
+        let updatedFavouriteCars = [...favouriteCars];
+        const i = updatedFavouriteCars.indexOf(car);
+        if (i === -1) {
+            updatedFavouriteCars.push(car);
+        } else {
+            updatedFavouriteCars.splice(i, 1);
+        }
+        setFavouriteCars(updatedFavouriteCars);
+    };
+
+    const updateFavouriteTracks = (track: string) => {
+        let updatedFavouriteTracks = [...favouriteTracks];
+        const i = updatedFavouriteTracks.indexOf(track);
+        if (i === -1) {
+            updatedFavouriteTracks.push(track);
+        } else {
+            updatedFavouriteTracks.splice(i, 1);
+        }
+        setFavouriteTracks(updatedFavouriteTracks);
+    };
+
+    const updateFilterFavouriteCars = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setFilterFavouriteCars(!filterFavouriteCars);
+    };
+    const updateFilterFavouriteTracks = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setFilterFavouriteTracks(!filterFavouriteTracks);
+    };
     return (
         <div>
             <MenuBar activeTab={activeTab} allTabs={listOfTabs} callback={changeTab} />
@@ -146,11 +191,16 @@ const App = () => {
                     changeWeek={changeViewingWeek}
                     licenceFilters={licenceFilters}
                     updateFilters={updateFilters}
+                    updateFavouriteCars={updateFavouriteCars}
+                    updateFavouriteTracks={updateFavouriteTracks}
+                    filterFavouriteCars={filterFavouriteCars}
+                    updateFilterFavouriteCars={updateFilterFavouriteCars}
+                    updateFilterFavouriteTracks={updateFilterFavouriteTracks}
+                    filterFavouriteTracks={filterFavouriteTracks}
                 />
             ) : activeTab === listOfTabs[1] ? (
                 <CarsTab
                     cars={carData}
-                    carNames={carList}
                     ownedCars={ownedCars}
                     updateOneItem={updateOwnedCar}
                     updateAllItems={updateAllCars}
@@ -158,7 +208,6 @@ const App = () => {
             ) : activeTab === listOfTabs[2] ? (
                 <TracksTab
                     tracks={trackData}
-                    trackNames={trackList}
                     ownedTracks={ownedTracks}
                     updateOneItem={updateOwnedTrack}
                     updateAllItems={updateAllTracks}

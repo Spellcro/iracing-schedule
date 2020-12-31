@@ -9,11 +9,20 @@ type SeriesTableProps = {
     tracks: ContentObject;
     cars: ContentObject;
     filters: { [key: string]: boolean };
+    filterFavouriteCars: boolean;
+    filterFavouriteTracks: boolean;
 };
 
 const listOfSeries: string[] = Object.keys(fullSeasonSchedule);
 
-const SeriesTable: React.FC<SeriesTableProps> = ({ viewingWeek, tracks, cars, filters }) => {
+const SeriesTable: React.FC<SeriesTableProps> = ({
+    viewingWeek,
+    tracks,
+    cars,
+    filters,
+    filterFavouriteCars,
+    filterFavouriteTracks,
+}) => {
     // Create an array of series where at least one car is owned
     const eligibleSeries = listOfSeries.filter((series) =>
         fullSeasonSchedule[series].eligibleCars.some((car) => cars[car].owned)
@@ -32,6 +41,38 @@ const SeriesTable: React.FC<SeriesTableProps> = ({ viewingWeek, tracks, cars, fi
         );
     } else {
         filteredEligibleSeries = eligibleSeriesThisWeek;
+    }
+
+    // Filter for favourite cars if applicable
+    if (filterFavouriteCars) {
+        const favouriteCars: string[] = JSON.parse(
+            String(window.localStorage.getItem('favouriteCars'))
+        );
+        let filteredForFavouriteCars = filteredEligibleSeries.filter((series) => {
+            let passedFilters = false;
+            favouriteCars.forEach((car) => {
+                if (fullSeasonSchedule[series].eligibleCars.indexOf(car) >= 0) {
+                    passedFilters = true;
+                }
+            });
+            return passedFilters;
+        });
+
+        filteredEligibleSeries = [...filteredForFavouriteCars];
+    }
+
+    // Filter for favourite tracks if applicable
+    if (filterFavouriteTracks) {
+        const favouriteTracks: string[] = JSON.parse(
+            String(window.localStorage.getItem('favouriteTracks'))
+        );
+        let filteredForFavouriteTracks = filteredEligibleSeries.filter(
+            (series) =>
+                favouriteTracks.indexOf(
+                    fullSeasonSchedule[series].seriesSchedule[viewingWeek - 1]
+                ) >= 0
+        );
+        filteredEligibleSeries = [...filteredForFavouriteTracks];
     }
 
     return (
