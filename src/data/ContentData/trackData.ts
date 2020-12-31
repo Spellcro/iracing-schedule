@@ -246,6 +246,57 @@ const defaultTrackData: ContentObject = {
         free: false,
         owned: false,
     },
+
+    usaInternational: {
+        name: 'USA International Speedway',
+        free: true,
+        owned: true,
+    },
+    southernNational: {
+        name: 'Southern National Motorsports Park',
+        free: true,
+        owned: true,
+    },
+    phoenix2008: {
+        name: '[Legacy] Phoenix Raceway - 2008',
+        free: true,
+        owned: true,
+    },
+    iowa: {
+        name: 'Iowa Speedway',
+        free: false,
+        owned: false,
+    },
+    michigan: {
+        name: 'Michigan International Speedway',
+        free: false,
+        owned: false,
+    },
+    newHampshire: {
+        name: 'New Hampshire Motor Speedway',
+        free: false,
+        owned: false,
+    },
+    phoenix: {
+        name: 'Phoenix Raceway ',
+        free: false,
+        owned: false,
+    },
+    pocono: {
+        name: 'Pocono Raceway',
+        free: false,
+        owned: false,
+    },
+    richmond: {
+        name: 'Richmond Raceway',
+        free: false,
+        owned: false,
+    },
+    technologyRaceway: {
+        name: 'World Wide Technology Raceway',
+        free: false,
+        owned: false,
+    },
 };
 
 export default defaultTrackData;

@@ -11,5 +11,5 @@ export const ContentTabWrapper = styled.div`
     width: 100%;
     position: relative;
     top: 48px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 `;

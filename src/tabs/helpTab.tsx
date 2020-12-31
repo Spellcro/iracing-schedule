@@ -13,9 +13,8 @@ const HelpTab = () => {
                     automatically based on owned cars, and the entries are shown in green if the
                     track for that week is owned.
                     <br />
-                    Oval content is not currently included on this site. Any ovals (not including
-                    road courses that are part of ovals, such as Daytona Road) are listed as either
-                    a free or paid oval for now.
+                    Oval content is not currently fully implemented on this site. Oval tracks will
+                    slowly be rolled out as they appear in road series schedules.
                     <br />
                     All images on this site are from <a href='https://iracing.com'>iRacing.com</a>
                     <br /> This app was created by Adam Wilmott using React and TypeScript.
