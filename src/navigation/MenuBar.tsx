@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Tabs, Tab } from '@material-ui/core';
 // Import styles
-import './styles/MenuBar.css';
+import '../styles/MenuBar.css';
 type MenuBarProps = {
     activeTab: string;
     allTabs: string[];

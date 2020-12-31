@@ -79,7 +79,6 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
                     filterFavouriteTracks={filterFavouriteTracks}
                 />
             </div>
-            <div aria-label='white space at bottom of page' style={{ padding: '20px' }} />
         </div>
     );
 };

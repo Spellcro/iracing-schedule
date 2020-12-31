@@ -13,15 +13,12 @@ const HelpTab = () => {
                     automatically based on owned cars, and the entries are shown in green if the
                     track for that week is owned.
                     <br />
-                    Oval content, both cars and tracks, is not included in this site. Any ovals (not
-                    including road courses that are part of ovals, such as Daytona Road) are listed
-                    as either a free or paid oval.
+                    Oval content is not currently included on this site. Any ovals (not including
+                    road courses that are part of ovals, such as Daytona Road) are listed as either
+                    a free or paid oval for now.
                     <br />
                     All images on this site are from <a href='https://iracing.com'>iRacing.com</a>
                     <br /> This app was created by Adam Wilmott using React and TypeScript.
-                    <br />
-                    Source code available{' '}
-                    <a href='https://github.com/Spellcro/iracing-schedule'>on github</a>.
                 </p>
             </div>
         </div>

@@ -34,6 +34,7 @@ const SeriesTable: React.FC<SeriesTableProps> = ({
     );
 
     let filteredEligibleSeries: string[];
+
     // If any licence filters are applied only show series which fit the filters
     if (Object.keys(filters).some((filter) => filters[filter] === true)) {
         filteredEligibleSeries = eligibleSeriesThisWeek.filter(

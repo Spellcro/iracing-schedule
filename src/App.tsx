@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-// Import Menu Bar
-import MenuBar from './menuBar';
+// Import Header and Footer
+import MenuBar from './navigation/MenuBar';
+import Footer from './navigation/Footer';
 
 // Import Tabs
 import HelpTab from './tabs/HelpTab';
@@ -215,6 +216,7 @@ const App = () => {
             ) : (
                 <HelpTab />
             )}
+            <Footer />
         </div>
     );
 };
