@@ -43,7 +43,7 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
 }) => {
     return (
         <div className='PlannerTabWrapper'>
-            <h3 className='PlannerTabIntro'>iRacing 2020 S4 Schedule - Week {currentWeek}</h3>
+            <h3 className='PlannerTabIntro'>iRacing 2021 S1 Schedule - Week {currentWeek}</h3>
 
             <h2 className='PlannerTabHeader'>Schedule for Week {viewingWeek}</h2>
 
