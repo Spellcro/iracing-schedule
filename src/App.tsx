@@ -9,6 +9,7 @@ import HelpTab from './tabs/HelpTab';
 import PlannerTab from './tabs/PlannerTab/PlannerTab';
 import CarsTab from './tabs/ContentTabs/carsTab';
 import TracksTab from './tabs/ContentTabs/trackTab';
+import PurchaseGuideTab from './tabs/PurchaseGuideTab';
 
 // Import initial setup functions
 import { SetInitialCarData, SetInitialTrackData } from './helpers/initialSetupFunctions';
@@ -55,6 +56,9 @@ const App = () => {
     const [filterFavouriteCars, setFilterFavouriteCars] = useState(false);
     const [filterFavouriteTracks, setFilterFavouriteTracks] = useState(false);
     const [filterFavouriteSeries, setFilterFavouriteSeries] = useState(false);
+    const [purchaseGuideUseFavourites, setPurchaseGuideUseFavourites] = useState(true);
+    const [purchaseGuideUseAll, setPurchaseGuideUseAll] = useState(false);
+    const [purchaseGuideUseEligible, setPurchaseGuideUseEligible] = useState(false);
 
     // Set up hooks to handle saving data to browser local storage
     // Owned Cars/Tracks
@@ -82,7 +86,7 @@ const App = () => {
     }, [favouriteSeries]);
 
     // Create an array of tab names
-    const listOfTabs: string[] = ['Planner', 'Set Cars', 'Set Tracks', 'Help'];
+    const listOfTabs: string[] = ['Planner', 'Set Cars', 'Set Tracks', 'Purchase Guide', 'Help'];
 
     // Create functions to utilise setState for the site
 
@@ -208,10 +212,29 @@ const App = () => {
         setFilterFavouriteCars(false);
         setFilterFavouriteTracks(false);
     };
+
+    const updatePurchaseGuideUseFavourites = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPurchaseGuideUseFavourites(!purchaseGuideUseFavourites);
+        setPurchaseGuideUseAll(false);
+        setPurchaseGuideUseEligible(false);
+    };
+
+    const updatePurchaseGuideUseEligible = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPurchaseGuideUseFavourites(false);
+        setPurchaseGuideUseAll(false);
+        setPurchaseGuideUseEligible(!purchaseGuideUseEligible);
+    };
+
+    const updatePurchaseGuideUseAll = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPurchaseGuideUseFavourites(false);
+        setPurchaseGuideUseAll(!purchaseGuideUseAll);
+        setPurchaseGuideUseEligible(false);
+    };
+
     return (
         <div>
             <MenuBar activeTab={activeTab} allTabs={listOfTabs} callback={changeTab} />
-            {activeTab === listOfTabs[0] ? (
+            {activeTab === 'Planner' ? (
                 <PlannerTab
                     tracks={trackData}
                     cars={carData}
@@ -230,19 +253,32 @@ const App = () => {
                     filterFavouriteSeries={filterFavouriteSeries}
                     updateFilterFavouriteSeries={updateFilterFavouriteSeries}
                 />
-            ) : activeTab === listOfTabs[1] ? (
+            ) : activeTab === 'Set Cars' ? (
                 <CarsTab
                     cars={carData}
                     ownedCars={ownedCars}
                     updateOneItem={updateOwnedCar}
                     updateAllItems={updateAllCars}
                 />
-            ) : activeTab === listOfTabs[2] ? (
+            ) : activeTab === 'Set Tracks' ? (
                 <TracksTab
                     tracks={trackData}
                     ownedTracks={ownedTracks}
                     updateOneItem={updateOwnedTrack}
                     updateAllItems={updateAllTracks}
+                />
+            ) : activeTab === 'Purchase Guide' ? (
+                <PurchaseGuideTab
+                    favouriteSeries={favouriteSeries}
+                    useFavourites={purchaseGuideUseFavourites}
+                    useAll={purchaseGuideUseAll}
+                    useEligible={purchaseGuideUseEligible}
+                    updateUseFavourites={updatePurchaseGuideUseFavourites}
+                    updateUseAll={updatePurchaseGuideUseAll}
+                    updateUseEligible={updatePurchaseGuideUseEligible}
+                    trackData={trackData}
+                    carData={carData}
+                    currentWeek={currentWeek}
                 />
             ) : (
                 <HelpTab />

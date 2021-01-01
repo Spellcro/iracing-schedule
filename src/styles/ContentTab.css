@@ -92,7 +92,7 @@
 }
 
 .SelectAllButton {
-    margin-left: 0.4rem !important;
+    margin: 0 0.4rem 0 0.4rem !important;
 }
 .SelectAllButton:hover {
     box-shadow: black 1px 3px 6px;

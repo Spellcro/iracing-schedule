@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Button, Dialog, DialogTitle, DialogContent, Checkbox } from '@material-ui/core';
+import {
+    Button,
+    Dialog,
+    DialogTitle,
+    DialogContent,
+    Checkbox,
+    FormGroup,
+    FormControlLabel,
+    FormControl,
+    Typography,
+} from '@material-ui/core';
 import carsData from '../../data/ContentData/carsData';
 import trackData from '../../data/ContentData/trackData';
 import seriesData from '../../data/scheduleData';
@@ -7,7 +17,7 @@ import seriesData from '../../data/scheduleData';
 // Import Styles
 import '../../styles/SetFavourites.css';
 
-type SetFavouritesButtonProps = {
+type SetFavouritesDialogProps = {
     closeModal: () => void;
     openModal: () => void;
     showModal: boolean;
@@ -62,7 +72,7 @@ const SetFavourites: React.FC<{
     );
 };
 
-const SetFavouriteCars: React.FC<SetFavouritesButtonProps> = ({
+const SetFavouriteCars: React.FC<SetFavouritesDialogProps> = ({
     closeModal,
     openModal,
     showModal,
@@ -136,7 +146,7 @@ const SetFavouriteCars: React.FC<SetFavouritesButtonProps> = ({
     );
 };
 
-const SetFavouriteTracks: React.FC<SetFavouritesButtonProps> = ({
+const SetFavouriteTracks: React.FC<SetFavouritesDialogProps> = ({
     closeModal,
     openModal,
     showModal,
@@ -210,7 +220,7 @@ const SetFavouriteTracks: React.FC<SetFavouritesButtonProps> = ({
     );
 };
 
-const SetFavouriteSeries: React.FC<SetFavouritesButtonProps> = ({
+const SetFavouriteSeries: React.FC<SetFavouritesDialogProps> = ({
     closeModal,
     openModal,
     showModal,
@@ -227,12 +237,7 @@ const SetFavouriteSeries: React.FC<SetFavouritesButtonProps> = ({
             >
                 Set Favourite Series
             </Button>
-            <Dialog
-                open={showModal}
-                onClose={closeModal}
-                aria-labelledby='favourite-series'
-                className='set-favourites-dialog'
-            >
+            <Dialog open={showModal} onClose={closeModal} className='set-favourites-dialog'>
                 <DialogTitle style={{ textAlign: 'center', fontSize: '30px' }}>
                     Set Favourite Series
                 </DialogTitle>
@@ -247,36 +252,56 @@ const SetFavouriteSeries: React.FC<SetFavouritesButtonProps> = ({
                     >
                         {itemList.map((item) => {
                             return (
-                                <div
-                                    style={{
-                                        display: 'flex',
-                                        flexDirection: 'row',
-                                        justifyContent: 'space-between',
-                                        border: '2px black',
+                                // <div
+                                //     style={{
+                                //         display: 'flex',
+                                //         flexDirection: 'row',
+                                //         justifyContent: 'space-between',
+                                //         border: '2px black',
 
-                                        marginTop: '0.4rem',
-                                    }}
-                                    key={`${item}DialogDiv`}
-                                >
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'row',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }}
-                                        key={`${item}DialogTextContainer`}
-                                    >
-                                        <div key={`${item}DialogText`}>
-                                            {seriesData[item].seriesName}
-                                        </div>
-                                        <SetFavouriteCheckbox
-                                            item={item}
-                                            itemType={'Series'}
-                                            updateFavourites={updateFavourites}
+                                //         marginTop: '0.4rem',
+                                //     }}
+                                //     key={`${item}DialogDiv`}
+                                // >
+                                //     <div
+                                //         style={{
+                                //             display: 'flex',
+                                //             flexDirection: 'row',
+                                //             justifyContent: 'center',
+                                //             alignItems: 'center',
+                                //         }}
+                                //         key={`${item}DialogTextContainer`}
+                                //     >
+                                //         <div key={`${item}DialogText`}>
+                                //             {seriesData[item].seriesName}
+                                //         </div>
+                                //         <SetFavouriteCheckbox
+                                //             item={item}
+                                //             itemType={'Series'}
+                                //             updateFavourites={updateFavourites}
+                                //         />
+                                //     </div>
+                                // </div>
+                                <FormControl component='fieldset'>
+                                    <FormGroup row>
+                                        <FormControlLabel
+                                            value={item}
+                                            control={
+                                                <SetFavouriteCheckbox
+                                                    item={item}
+                                                    itemType={'Series'}
+                                                    updateFavourites={updateFavourites}
+                                                />
+                                            }
+                                            label={
+                                                <Typography style={{ fontSize: 'small' }}>
+                                                    {seriesData[item].seriesName}
+                                                </Typography>
+                                            }
+                                            labelPlacement='start'
                                         />
-                                    </div>
-                                </div>
+                                    </FormGroup>
+                                </FormControl>
                             );
                         })}
                     </div>
@@ -300,7 +325,7 @@ const SetFavouriteCheckbox: React.FC<{
         updateFavourites(item);
         setChecked(!checked);
     };
-    return <Checkbox checked={checked} onChange={handleChange} color='primary' />;
+    return <Checkbox checked={checked} onChange={handleChange} color='secondary' />;
 };
 
 export default SetFavourites;
