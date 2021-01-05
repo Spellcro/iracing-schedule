@@ -1,4 +1,4 @@
-.ContentImageContainer {
+.content-image-container {
     display: grid;
     position: relative;
     border-radius: 23px;
@@ -12,14 +12,27 @@
     background-color: black;
 }
 
-.UnownedContent {
+.content-image-container:hover {
+    cursor: pointer;
+}
+
+.content-image-container:hover .content-image {
+    opacity: 0.3;
+}
+
+.content-image-container:hover .content-hover-text-container {
+    opacity: 1;
+}
+
+.unowned-content {
     border: 6px ridge rgb(255, 51, 0);
 }
 
-.OwnedContent {
+.owned-content {
     border: 6px ridge rgb(49, 207, 17);
 }
-.ContentImage {
+
+.content-image {
     background-color: rgb(92, 92, 92);
     border-radius: 14px;
     opacity: 1;
@@ -29,7 +42,7 @@
     backface-visibility: hidden;
 }
 
-.ContentHoverTextContainer {
+.content-hover-text-container {
     font-family: Poppins, sans-serif;
     transition: 0.5s ease;
     opacity: 0;
@@ -38,13 +51,13 @@
     color: white;
 }
 
-.ContentHoverText {
+.content-hover-text {
     font-weight: 400;
     font-size: large;
     user-select: none;
 }
 
-.ContentHoverButton {
+.content-hover-button {
     background-color: rgb(20, 168, 40);
     border-radius: 14px;
     color: white;
@@ -58,44 +71,16 @@
     border: 0;
 }
 
-.ContentHoverButton:active {
+.content-hover-button:active {
     box-shadow: 0;
     border: 0;
 }
 
-.ContentHoverButton:focus {
+.content-hover-button:focus {
     outline: none;
     border: none;
 }
 
-.ButtonContentUnowned {
+.button-content-unowned {
     background-color: rgb(184, 9, 9);
-}
-
-.ContentImageContainer:hover {
-    cursor: pointer;
-}
-
-.ContentImageContainer:hover .ContentImage {
-    opacity: 0.3;
-}
-
-.ContentImageContainer:hover .ContentHoverTextContainer {
-    opacity: 1;
-}
-
-.SelectAllButtonContainer {
-    padding-top: 1.5rem;
-    text-align: center;
-    height: 60px;
-    width: 100%;
-}
-
-.SelectAllButton {
-    margin: 0 0.4rem 0 0.4rem !important;
-}
-.SelectAllButton:hover {
-    box-shadow: black 1px 3px 6px;
-    font-weight: 600;
-    color: rgb(245, 0, 87);
 }

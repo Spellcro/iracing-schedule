@@ -2,7 +2,7 @@ export type ScheduleObject = {
     [key: string]: SeriesDetails;
 };
 export type SeriesDetails = {
-    seriesName: string;
+    name: string;
     eligibleCars: string[];
     seriesSchedule: string[];
     licenceClass: string;
@@ -10,7 +10,7 @@ export type SeriesDetails = {
 
 const fullSeasonSchedule: ScheduleObject = {
     globalmazda: {
-        seriesName: 'Global Mazda MX-5 Cup',
+        name: 'Global Mazda MX-5 Cup',
         eligibleCars: ['mazdamx5'],
         seriesSchedule: [
             'tsukuba',
@@ -30,7 +30,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     bmw12: {
-        seriesName: 'BMW 12.0 Challenge',
+        name: 'BMW 12.0 Challenge',
         eligibleCars: ['bmwm4gt4'],
         seriesSchedule: [
             'watkinsGlen',
@@ -50,7 +50,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     globalChallenge: {
-        seriesName: 'Fanatec Global Challenge',
+        name: 'Fanatec Global Challenge',
         eligibleCars: ['kiaOptima', 'cadillacCTSV'],
         seriesSchedule: [
             'limeRock',
@@ -70,7 +70,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     ferrariChallenge: {
-        seriesName: 'Ferrari GT3 Challenge',
+        name: 'Ferrari GT3 Challenge',
         eligibleCars: ['ferrari488gt3'],
         seriesSchedule: [
             'oranPark',
@@ -90,7 +90,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     fr20: {
-        seriesName: 'iRacing Formula Renault 2.0 Championship',
+        name: 'iRacing Formula Renault 2.0 Championship',
         eligibleCars: ['fr20'],
         seriesSchedule: [
             'roadAmerica',
@@ -110,7 +110,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     specRacerFord: {
-        seriesName: 'iRacing Spec Racer Ford Challenge',
+        name: 'iRacing Spec Racer Ford Challenge',
         eligibleCars: ['specRacerFord'],
         seriesSchedule: [
             'oranPark',
@@ -130,7 +130,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     formulaSprint: {
-        seriesName: 'Pure Driving School Formula Sprint',
+        name: 'Pure Driving School Formula Sprint',
         eligibleCars: ['usf2000'],
         seriesSchedule: [
             'limeRock',
@@ -150,7 +150,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     rufgt3: {
-        seriesName: 'Ruf GT3 Challenge',
+        name: 'Ruf GT3 Challenge',
         eligibleCars: ['rufrt12'],
         seriesSchedule: [
             'watkinsGlen',
@@ -170,7 +170,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     simlabPCC: {
-        seriesName: 'Sim-Lab Production Car Challenge',
+        name: 'Sim-Lab Production Car Challenge',
         eligibleCars: ['mazdamx5', 'fordFR500', 'vwJetta', 'pontiacSolstice'],
         seriesSchedule: [
             'tsukuba',
@@ -190,7 +190,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     skipbarber: {
-        seriesName: 'Skip Barber Race Series',
+        name: 'Skip Barber Race Series',
         eligibleCars: ['skipbarber'],
         seriesSchedule: [
             'oultonPark',
@@ -210,7 +210,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     tcrChallenge: {
-        seriesName: 'Turn Racing Touring Car Challenge',
+        name: 'Turn Racing Touring Car Challenge',
         eligibleCars: ['audirs3lms'],
         seriesSchedule: [
             'longBeach',
@@ -230,7 +230,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     advancedmazda: {
-        seriesName: 'Advanced Mazda MX-5 Cup Series',
+        name: 'Advanced Mazda MX-5 Cup Series',
         eligibleCars: ['mazdamx5'],
         seriesSchedule: [
             'spa',
@@ -250,7 +250,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     formula3: {
-        seriesName: 'Apex Racing Academy F3 Championship',
+        name: 'Apex Racing Academy F3 Championship',
         eligibleCars: ['dallaraf3'],
         seriesSchedule: [
             'lagunaSeca',
@@ -270,7 +270,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     formulaiR: {
-        seriesName: 'Dallara Formula iR',
+        name: 'Dallara Formula iR',
         eligibleCars: ['dallarair01'],
         seriesSchedule: [
             'suzuka',
@@ -290,7 +290,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     gpLegends: {
-        seriesName: 'Grand Prix Legends',
+        name: 'Grand Prix Legends',
         eligibleCars: ['lotus49'],
         seriesSchedule: [
             'monza',
@@ -310,7 +310,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     gtChallenge: {
-        seriesName: 'Heusinkveld GT Challenge',
+        name: 'Heusinkveld GT Challenge',
         eligibleCars: ['fordgt', 'astonDbr9', 'corvettec6r'],
         seriesSchedule: [
             'nurb24',
@@ -330,7 +330,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     imsaMpc: {
-        seriesName: 'IMSA Michelin Pilot Challenge',
+        name: 'IMSA Michelin Pilot Challenge',
         eligibleCars: ['audirs3lms', 'bmwm4gt4', 'porsche718gt4'],
         seriesSchedule: [
             'spa',
@@ -350,7 +350,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     indypro: {
-        seriesName: 'Indy Pro 2000 Championship',
+        name: 'Indy Pro 2000 Championship',
         eligibleCars: ['indypro2000'],
         seriesSchedule: [
             'longBeach',
@@ -370,7 +370,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     kamel: {
-        seriesName: 'Kamel GT Championship',
+        name: 'Kamel GT Championship',
         eligibleCars: ['audi90gto', 'nissangtp'],
         seriesSchedule: [
             'leMans',
@@ -390,7 +390,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     porscheCup: {
-        seriesName: 'Porsche iRacing Cup',
+        name: 'Porsche iRacing Cup',
         eligibleCars: ['porsche911cup'],
         seriesSchedule: [
             'imola',
@@ -410,7 +410,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     radicalChallenge: {
-        seriesName: 'Radical Racing Challenge',
+        name: 'Radical Racing Challenge',
         eligibleCars: ['radical'],
         seriesSchedule: [
             'silverstone2008',
@@ -430,7 +430,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     v8supercars: {
-        seriesName: 'Supercars Series',
+        name: 'Supercars Series',
         eligibleCars: ['fordmustanggt', 'holden2019'],
         seriesSchedule: [
             'mountPanorama',
@@ -450,7 +450,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     vrsEndurance: {
-        seriesName: 'VRS GT Endurance Series',
+        name: 'VRS GT Endurance Series',
         eligibleCars: [
             'audir8lms',
             'bmwm4gt3',
@@ -478,7 +478,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     classicLotusGP: {
-        seriesName: 'iRacing Classic Lotus Grand Prix',
+        name: 'iRacing Classic Lotus Grand Prix',
         eligibleCars: ['lotus79'],
         seriesSchedule: [
             'silverstone2008',
@@ -498,7 +498,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     gtEndurance: {
-        seriesName: 'GTE Endurance Series',
+        name: 'GTE Endurance Series',
         eligibleCars: ['bmwm8gte', 'corvettec8r', 'ferrari488gte', 'fordgte', 'porschersr'],
         seriesSchedule: [
             'sebring',
@@ -518,7 +518,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     imsa: {
-        seriesName: 'IMSA Sportscar Championship',
+        name: 'IMSA Sportscar Championship',
         eligibleCars: [
             'bmwm4gt3',
             'lamboHuracanGt3',
@@ -546,7 +546,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     indycar: {
-        seriesName: 'Verizon INDYCAR Series',
+        name: 'Verizon INDYCAR Series',
         eligibleCars: ['dallarair18'],
         seriesSchedule: [
             'roadAmerica',
@@ -566,7 +566,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     fr35: {
-        seriesName: 'iRacing Formula 3.5 Championship',
+        name: 'iRacing Formula 3.5 Championship',
         eligibleCars: ['fr35'],
         seriesSchedule: [
             'suzuka',
@@ -586,7 +586,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     vrsSprint: {
-        seriesName: 'VRS GT Sprint Series',
+        name: 'VRS GT Sprint Series',
         eligibleCars: [
             'audir8lms',
             'bmwm4gt3',
@@ -614,7 +614,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     iELMS: {
-        seriesName: 'European Endurance Series',
+        name: 'European Endurance Series',
         eligibleCars: [
             'corvettec8r',
             'ferrari488gte',
@@ -642,7 +642,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     iLMS: {
-        seriesName: 'European Sprint Series',
+        name: 'European Sprint Series',
         eligibleCars: [
             'corvettec8r',
             'ferrari488gte',
@@ -670,7 +670,7 @@ const fullSeasonSchedule: ScheduleObject = {
     },
 
     formula1: {
-        seriesName: 'iRacing Grand Prix Series',
+        name: 'iRacing Grand Prix Series',
         eligibleCars: ['mclarenmp430'],
         seriesSchedule: [
             'barcelona',

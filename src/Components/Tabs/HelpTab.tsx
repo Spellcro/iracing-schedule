@@ -1,10 +1,11 @@
 import React from 'react';
-import '../styles/HelpTab.css';
+// Import styles
+import '../../styles/HelpTab.css';
 
 const HelpTab = () => {
     return (
-        <div className='helpTabWrapper'>
-            <div className='helpTabInfo'>
+        <div className='help-tab-wrapper'>
+            <div className='help-tab-infobox'>
                 <h2>What is this site?</h2>
                 <p>
                     The iRacing Schedule Tracker checks a user's eligibility for iRacing.com's road

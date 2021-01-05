@@ -1,0 +1,15 @@
+.select-all-button-container {
+    padding-top: 1.5rem;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+}
+
+.select-all-button {
+    margin: 0 0.4rem 0 0.4rem !important;
+}
+.select-all-button:hover {
+    box-shadow: black 1px 3px 6px;
+    font-weight: 600;
+    color: rgb(245, 0, 87);
+}

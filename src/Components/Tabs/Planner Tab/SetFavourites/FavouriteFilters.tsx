@@ -1,7 +1,7 @@
 import React from 'react';
 import { Checkbox, FormControl, FormGroup, FormControlLabel } from '@material-ui/core';
 // import styles
-import '../../styles/FavouriteFilters.css';
+import '../../../../styles/FavouriteFilters.css';
 
 type FavouriteFiltersProps = {
     filterFavouriteCars: boolean;
@@ -21,9 +21,9 @@ const FavouriteFilters: React.FC<FavouriteFiltersProps> = ({
     updateFilterFavouriteSeries,
 }) => {
     return (
-        <div className='FavouriteFiltersContainer'>
+        <div className='favourite-filters-container'>
             <FormControl component='fieldset'>
-                <FormGroup aria-label='position' row>
+                <FormGroup row>
                     <FilterCars
                         filterFavouriteCars={filterFavouriteCars}
                         updateFilterFavouriteCars={updateFilterFavouriteCars}

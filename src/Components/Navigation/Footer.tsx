@@ -1,11 +1,11 @@
 import React from 'react';
-import '../styles/Footer.css';
+import '../../styles/Footer.css';
 
 const Footer: React.FC<{}> = () => {
     return (
         <>
             <div className='empty-container'></div>
-            <div className='FooterWrapper'>
+            <div className='footer-wrapper'>
                 <p>
                     {'View source code on'}{' '}
                     <a className='github-link' href='https://github.com/Spellcro/iracing-schedule'>

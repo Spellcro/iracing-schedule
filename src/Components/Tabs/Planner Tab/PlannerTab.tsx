@@ -1,14 +1,14 @@
 import React from 'react';
-import { ContentObject } from '../../data/ContentData/ContentTypes';
+import { ContentObject } from '../../../data/ContentData/ContentTypes';
 import WeekSelector from './WeekSelector';
 import SeriesTable from './SeriesTable';
-import { seasonLength } from '../../data/WeekCalculation';
-import LicenceFilters, { LicenceFiltersType } from './LicenceFilters';
-import SetFavourites from './SetFavourites';
-
+import { seasonLength } from '../../../data/WeekCalculation';
+import LicenceFilters from './LicenceFilters/LicenceFilters';
+import { LicenceFiltersType } from './LicenceFilters/defaultLicenceFilters';
+import SetFavourites from './SetFavourites/SetFavourites';
+import FavouriteFilters from './SetFavourites/FavouriteFilters';
 // Import styles
-import '../../styles/PlannerTab.css';
-import FavouriteFilters from './FavouriteFilters';
+import '../../../styles/PlannerTab.css';
 
 type PlannerTabProps = {
     tracks: ContentObject;
@@ -48,12 +48,12 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
     updateFilterFavouriteSeries,
 }) => {
     return (
-        <div className='PlannerTabWrapper'>
-            <h3 className='PlannerTabIntro'>iRacing 2021 S1 Schedule - Week {currentWeek}</h3>
+        <div className='planner-tab-wrapper'>
+            <h3 className='planner-tab-intro'>iRacing 2021 S1 Schedule - Week {currentWeek}</h3>
 
-            <h2 className='PlannerTabHeader'>Schedule for Week {viewingWeek}</h2>
+            <h2 className='planner-tab-header'>Schedule for Week {viewingWeek}</h2>
 
-            <p className='ChangeWeekInfo'>
+            <p className='week-selection-info'>
                 Use the buttons below to view the schedule for a different week.
             </p>
             <WeekSelector
@@ -76,7 +76,7 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
                 filterFavouriteSeries={filterFavouriteSeries}
                 updateFilterFavouriteSeries={updateFilterFavouriteSeries}
             />
-            <div className='PlannerTableContainer'>
+            <div className='planner-table-container'>
                 <SeriesTable
                     viewingWeek={viewingWeek}
                     tracks={tracks}

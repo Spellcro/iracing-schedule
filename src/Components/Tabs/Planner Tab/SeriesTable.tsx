@@ -1,8 +1,10 @@
 import React from 'react';
-import fullSeasonSchedule from '../../data/scheduleData';
-import { ContentObject } from '../../data/ContentData/ContentTypes';
+import fullSeasonSchedule from '../../../data/scheduleData';
+import { ContentObject } from '../../../data/ContentData/ContentTypes';
 import NoSeriesAvailable from './NoSeriesAvailable';
-import EligibleSeriesTable from './EligibleSeries';
+import EligibleSeriesTable from './EligibleSeriesTable';
+// Import styles
+import '../../../styles/SeriesTable.css';
 
 type SeriesTableProps = {
     viewingWeek: number;

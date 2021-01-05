@@ -1,8 +1,8 @@
 import React from 'react';
-import fullSeasonSchedule from '../data/scheduleData';
-import '../styles/PurchaseGuideTab.css';
+import fullSeasonSchedule from '../../data/scheduleData';
+import '../../styles/PurchaseGuideTab.css';
 import { Checkbox, FormControl, FormGroup, FormControlLabel, Typography } from '@material-ui/core';
-import { ContentObject } from '../data/ContentData/ContentTypes';
+import { ContentObject } from '../../data/ContentData/ContentTypes';
 
 type PurchaseGuideTabProps = {
     favouriteSeries: string[];
@@ -19,6 +19,12 @@ type PurchaseGuideTabProps = {
 
 type TrackUsageDataType = {
     [key: string]: { usage: number; series: string[] };
+};
+
+type PurchaseGuideTrackTileProps = {
+    trackName: string;
+    trackUsage: number;
+    seriesUsage: string[];
 };
 
 const PurchaseGuideTab: React.FC<PurchaseGuideTabProps> = ({
@@ -80,7 +86,7 @@ const PurchaseGuideTab: React.FC<PurchaseGuideTabProps> = ({
             console.log(`Track: ${trackData[track].name}. Usage: ${trackUsageData[track].usage}.`);
             console.log('Used in the following series:');
             trackUsageData[track].series.forEach((series) => {
-                console.log(`${fullSeasonSchedule[series].seriesName}`);
+                console.log(`${fullSeasonSchedule[series].name}`);
             });
         }
     });
@@ -156,11 +162,6 @@ const PurchaseGuideTab: React.FC<PurchaseGuideTabProps> = ({
     );
 };
 
-type PurchaseGuideTrackTileProps = {
-    trackName: string;
-    trackUsage: number;
-    seriesUsage: string[];
-};
 const PurchaseGuideTrackTile: React.FC<PurchaseGuideTrackTileProps> = ({
     trackName,
     trackUsage,
@@ -172,7 +173,7 @@ const PurchaseGuideTrackTile: React.FC<PurchaseGuideTrackTileProps> = ({
             <p>Used in the following series:</p>
             <ul>
                 {seriesUsage.map((series) => (
-                    <li key={`${trackName}+${series}`}>{fullSeasonSchedule[series].seriesName}</li>
+                    <li key={`${trackName}+${series}`}>{fullSeasonSchedule[series].name}</li>
                 ))}
             </ul>
         </div>

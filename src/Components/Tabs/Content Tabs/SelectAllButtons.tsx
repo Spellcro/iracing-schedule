@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { ContentObject } from '../../data/ContentData/ContentTypes';
-import '../../styles/ContentTab.css';
+import { ContentObject } from '../../../data/ContentData/ContentTypes';
+// Import styles
+import '../../../styles/SelectAllButtons.css';
 
 type SelectDeselectAllButtonsProps = {
     content: ContentObject;
@@ -10,7 +11,7 @@ type SelectDeselectAllButtonsProps = {
     updateAllItems: (allContent: ContentObject, updatedContentList: string[]) => void;
 };
 
-const SelectDeselectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
+const SelectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
     content,
     contentList,
     ownedContent,
@@ -43,10 +44,10 @@ const SelectDeselectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
     };
 
     return (
-        <div className='SelectAllButtonContainer'>
+        <div className='select-all-button-container'>
             <Button
                 onClick={SelectAll}
-                className='SelectAllButton'
+                className='select-all-button'
                 variant='contained'
                 color='default'
             >
@@ -54,7 +55,7 @@ const SelectDeselectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
             </Button>
             <Button
                 onClick={DeselectAll}
-                className='SelectAllButton'
+                className='select-all-button'
                 variant='contained'
                 color='default'
             >
@@ -64,4 +65,4 @@ const SelectDeselectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
     );
 };
 
-export default SelectDeselectAllButtons;
+export default SelectAllButtons;

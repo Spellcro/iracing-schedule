@@ -1,4 +1,4 @@
-.PlannerTabWrapper {
+.planner-tab-wrapper {
     background-color: white;
     font-family: Poppins, 'sans-serif';
     color: rgb(14, 14, 14);
@@ -6,16 +6,11 @@
     width: 100%;
 }
 
-.PlannerTabIntro {
+.planner-tab-intro {
     padding: 10px;
 }
 
-.FavouritesWrapper {
-    margin-left: auto;
-    text-align: center;
-}
-
-.PlannerTableContainer {
+.planner-table-container {
     background-color: white;
     background-color: rgb(133, 133, 133);
     margin-top: 20px;
@@ -26,43 +21,13 @@
     max-width: min(95%, 1200px);
 }
 
-.PlannerTabHeader {
+.planner-tab-header {
     font-family: Poppins, sans-serif;
     text-align: center;
 }
 
-.EligibleContent {
-    transition: 0.25s;
-    background-color: rgba(94, 252, 94, 0.432);
-}
-
-.IneligibleContent {
-    transition: 0.25s;
-    background-color: white;
-}
-
-.PlannerTableHeader {
-    font-family: Poppins, sans-serif;
-    background-color: rgb(207, 207, 207);
-}
-
-.ChangeWeekInfo {
+.week-selection-info {
     font-family: Poppins, sans-serif;
     text-align: center;
     font-size: small;
-}
-
-.SeriesTable {
-    background-color: rgb(230, 228, 228);
-    margin-bottom: 0;
-}
-
-.NoSeries {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.LicenceFilterHeader {
-    margin-top: 5px;
-    margin-bottom: -5px;
 }

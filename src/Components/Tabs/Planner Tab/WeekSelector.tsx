@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 // Import styles
-import '../../styles/WeekSelector.css';
+import '../../../styles/WeekSelector.css';
 
 type WeekSelectorProps = {
     callback: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

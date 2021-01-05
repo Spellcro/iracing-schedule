@@ -1,0 +1,9 @@
+.eligible-content {
+    transition: 0.25s;
+    background-color: rgba(94, 252, 94, 0.432);
+}
+
+.ineligible-content {
+    transition: 0.25s;
+    background-color: white;
+}

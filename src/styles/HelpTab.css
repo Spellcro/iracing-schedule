@@ -1,4 +1,4 @@
-.helpTabWrapper {
+.help-tab-wrapper {
     font-family: Poppins, 'sans-serif';
     background-color: white;
     height: 100%;
@@ -7,7 +7,7 @@
     padding-top: 9rem;
 }
 
-.helpTabInfo {
+.help-tab-infobox {
     border-radius: 20px;
     padding: 10px;
     background-color: rgb(245, 245, 245);

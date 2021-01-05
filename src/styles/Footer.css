@@ -1,4 +1,4 @@
-.FooterWrapper {
+.footer-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,15 +10,6 @@
     width: 100%;
     font-family: Poppins, sans-serif;
     box-shadow: -0px -2px 5px 2px #b2b2b2;
-}
-
-.ShadowSpace {
-    height: 10%;
-}
-.FooterBottom {
-    bottom: 0;
-    height: 100%;
-    background-color: #f5f5f5;
 }
 
 .github-link:link {

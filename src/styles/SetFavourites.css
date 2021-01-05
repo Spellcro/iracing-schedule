@@ -1,30 +1,23 @@
-.FavouritesWrapper {
+.set-favourites-wrapper {
     padding: 0.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.SetFavouritesButton {
+.set-favourites-button {
     margin: 0.4rem !important;
 }
-.SetFavouritesButton:hover {
+.set-favourites-button:hover {
     box-shadow: black 1px 3px 6px;
     font-weight: 600;
     color: rgb(245, 0, 87);
 }
 
-.SetFavouritesModal {
-    position: 'absolute';
-    text-align: center;
-    width: 40%;
-    max-width: 650px;
-    background-color: 'white';
-    border: '2px solid #000';
-    box-shadow: '2px 2px';
-}
-
 .set-favourites-dialog {
-    width: '40%';
-    min-width: '400px';
+    min-width: '600px';
     max-width: '800px';
+    max-height: '1100px';
     text-align: 'center';
     margin: 'auto';
     font-size: small;

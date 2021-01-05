@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 
 // Import Header and Footer
-import MenuBar from './navigation/MenuBar';
-import Footer from './navigation/Footer';
+import MenuBar from './Components/Navigation/MenuBar';
+import Footer from './Components/Navigation/Footer';
 
 // Import Tabs
-import HelpTab from './tabs/HelpTab';
-import PlannerTab from './tabs/PlannerTab/PlannerTab';
-import CarsTab from './tabs/ContentTabs/carsTab';
-import TracksTab from './tabs/ContentTabs/trackTab';
-import PurchaseGuideTab from './tabs/PurchaseGuideTab';
+import HelpTab from './Components/Tabs/HelpTab';
+import PlannerTab from './Components/Tabs/Planner Tab/PlannerTab';
+import CarsTab from './Components/Tabs/Content Tabs/CarsTab';
+import TracksTab from './Components/Tabs/Content Tabs/TrackTab';
+import PurchaseGuideTab from './Components/Tabs/PurchaseGuideTab';
 
 // Import initial setup functions
 import { SetInitialCarData, SetInitialTrackData } from './helpers/initialSetupFunctions';
 // Import Other Data
 import { ContentObject } from './data/ContentData/ContentTypes';
 import GetCurrentWeek from './data/WeekCalculation';
-import { defaultLicenceFilters } from './tabs/PlannerTab/LicenceFilters';
+import { defaultLicenceFilters } from './Components/Tabs/Planner Tab/LicenceFilters/defaultLicenceFilters';
 
 const App = () => {
     const currentWeek = GetCurrentWeek();
@@ -61,6 +61,7 @@ const App = () => {
     const [purchaseGuideUseEligible, setPurchaseGuideUseEligible] = useState(false);
 
     // Set up hooks to handle saving data to browser local storage
+
     // Owned Cars/Tracks
     useEffect(() => {
         window.localStorage.setItem('ownedCars', JSON.stringify(ownedCars));
