@@ -1,12 +1,5 @@
-export type ScheduleObject = {
-    [key: string]: SeriesDetails;
-};
-export type SeriesDetails = {
-    name: string;
-    eligibleCars: string[];
-    seriesSchedule: string[];
-    licenceClass: string;
-};
+// Import Types
+import ScheduleObject from '../Types/ScheduleObject.types';
 
 const fullSeasonSchedule: ScheduleObject = {
     globalmazda: {

@@ -1,12 +1,7 @@
 import React from 'react';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
-import { LicenceFiltersType } from './defaultLicenceFilters';
-
-type LicenceCheckboxType = {
-    licence: 'R' | 'A' | 'B' | 'C' | 'D';
-    licenceFilters: LicenceFiltersType;
-    updateFilters: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+// Import Types
+import LicenceCheckboxType from '../../../../Types/LicenceCheckbox.types';
 
 const LicenceCheckbox: React.FC<LicenceCheckboxType> = ({
     licence,

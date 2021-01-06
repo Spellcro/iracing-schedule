@@ -1,13 +1,9 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-// Import styles
+// Import Types
+import WeekSelectorProps from '../../../Types/WeekSelector.types';
+// Import Styles
 import '../../../styles/WeekSelector.css';
-
-type WeekSelectorProps = {
-    callback: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-    seasonLength: number;
-    currentWeek: number;
-};
 
 const WeekSelector: React.FC<WeekSelectorProps> = ({ callback, seasonLength, currentWeek }) => {
     const numArray: number[] = [];

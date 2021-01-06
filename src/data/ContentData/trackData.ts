@@ -1,4 +1,4 @@
-import { ContentObject } from './ContentTypes';
+import ContentObject from '../../Types/ContentObject.types';
 
 const defaultTrackData: ContentObject = {
     barber: {

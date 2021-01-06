@@ -1,33 +1,14 @@
 import React from 'react';
-import { ContentObject } from '../../../data/ContentData/ContentTypes';
 import WeekSelector from './WeekSelector';
 import SeriesTable from './SeriesTable';
 import { seasonLength } from '../../../data/WeekCalculation';
 import LicenceFilters from './LicenceFilters/LicenceFilters';
-import { LicenceFiltersType } from './LicenceFilters/defaultLicenceFilters';
 import SetFavourites from './SetFavourites/SetFavourites';
 import FavouriteFilters from './SetFavourites/FavouriteFilters';
-// Import styles
+// Import Types
+import PlannerTabProps from '../../../Types/PlannerTab.types';
+// Import Styles
 import '../../../styles/PlannerTab.css';
-
-type PlannerTabProps = {
-    tracks: ContentObject;
-    cars: ContentObject;
-    currentWeek: number;
-    viewingWeek: number;
-    changeWeek: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-    licenceFilters: LicenceFiltersType;
-    updateFilters: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    updateFavouriteCars: (item: string) => void;
-    updateFavouriteTracks: (item: string) => void;
-    updateFavouriteSeries: (item: string) => void;
-    filterFavouriteCars: boolean;
-    updateFilterFavouriteCars: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    filterFavouriteTracks: boolean;
-    updateFilterFavouriteTracks: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    filterFavouriteSeries: boolean;
-    updateFilterFavouriteSeries: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
 
 const PlannerTab: React.FC<PlannerTabProps> = ({
     tracks,
@@ -36,7 +17,7 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
     viewingWeek,
     changeWeek,
     licenceFilters,
-    updateFilters,
+    updateLicenceFilters,
     updateFavouriteCars,
     updateFavouriteTracks,
     updateFavouriteSeries,
@@ -62,7 +43,7 @@ const PlannerTab: React.FC<PlannerTabProps> = ({
                 currentWeek={currentWeek}
             />
 
-            <LicenceFilters licenceFilters={licenceFilters} updateFilters={updateFilters} />
+            <LicenceFilters licenceFilters={licenceFilters} updateFilters={updateLicenceFilters} />
             <SetFavourites
                 updateFavouriteCars={updateFavouriteCars}
                 updateFavouriteTracks={updateFavouriteTracks}

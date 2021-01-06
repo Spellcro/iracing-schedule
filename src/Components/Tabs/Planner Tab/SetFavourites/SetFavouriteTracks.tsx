@@ -1,6 +1,8 @@
 import React from 'react';
-import SetFavouritesDialog, { SetFavouritesProps } from './SetFavouritesDialog';
+import SetFavouritesDialog from './SetFavouritesDialog';
 import trackData from '../../../../data/ContentData/trackData';
+// Import Types
+import SetFavouritesProps from '../../../../Types/SetFavourites.types';
 
 const SetFavouriteTracks: React.FC<SetFavouritesProps> = ({
     closeModal,

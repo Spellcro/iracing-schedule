@@ -1,14 +1,10 @@
 import React from 'react';
 import { FormControl, FormGroup } from '@material-ui/core';
 import LicenceCheckbox from './LicenceCheckbox';
-import { LicenceFiltersType } from './defaultLicenceFilters';
-// Import styles
+// Import Types
+import LicenceFiltersProps from '../../../../Types/LicenceFilters.types';
+// Import Styles
 import '../../../../styles/LicenceFilters.css';
-
-type LicenceFiltersProps = {
-    licenceFilters: LicenceFiltersType;
-    updateFilters: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
 
 const LicenceFilters: React.FC<LicenceFiltersProps> = ({ licenceFilters, updateFilters }) => {
     return (

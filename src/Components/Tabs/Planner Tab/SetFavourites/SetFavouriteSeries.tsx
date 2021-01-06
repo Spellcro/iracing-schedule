@@ -1,6 +1,8 @@
 import React from 'react';
-import SetFavouritesDialog, { SetFavouritesProps } from './SetFavouritesDialog';
+import SetFavouritesDialog from './SetFavouritesDialog';
 import seriesData from '../../../../data/scheduleData';
+// Import Types
+import SetFavouritesProps from '../../../../Types/SetFavourites.types';
 
 const SetFavouriteSeries: React.FC<SetFavouritesProps> = ({
     closeModal,

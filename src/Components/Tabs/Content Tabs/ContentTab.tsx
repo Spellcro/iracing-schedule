@@ -3,18 +3,10 @@ import { Img } from 'react-image';
 import { Spinner } from 'react-bootstrap';
 import { ContentTabWrapper } from '../../../styles/ContentTab.styles';
 import SelectDeselectAllButtons from './SelectAllButtons';
-import { ContentObject } from '../../../data/ContentData/ContentTypes';
-// Import styles
+// Import Types
+import ContentTabProps from '../../../Types/ContentTab.types';
+// Import Styles
 import '../../../styles/ContentTab.css';
-
-type ContentTabProps = {
-    content: ContentObject;
-    contentList: string[];
-    imageFolder: string;
-    ownedContent: string[];
-    updateOneItem: (pieceOfContent: string) => void;
-    updateAllItems: (allContent: ContentObject, updatedContentList: string[]) => void;
-};
 
 const ContentTab: React.FC<ContentTabProps> = ({
     content,

@@ -10,25 +10,8 @@ import {
     Typography,
 } from '@material-ui/core';
 import SetFavouritesCheckbox from './SetFavouritesCheckbox';
-import { ContentObject } from '../../../../data/ContentData/ContentTypes';
-import { ScheduleObject } from '../../../../data/scheduleData';
-
-export type SetFavouritesProps = {
-    closeModal: () => void;
-    openModal: () => void;
-    showModal: boolean;
-    updateFavourites: (item: string) => void;
-};
-
-type SetFavouritesDialogProps = {
-    itemType: 'Cars' | 'Tracks' | 'Series';
-    closeModal: () => void;
-    openModal: () => void;
-    showModal: boolean;
-    itemList: string[];
-    updateFavourites: (item: string) => void;
-    data: ContentObject | ScheduleObject;
-};
+// Import Types
+import SetFavouritesDialogProps from '../../../../Types/SetFavouritesDialog.types';
 
 const SetFavouritesDialog: React.FC<SetFavouritesDialogProps> = ({
     itemType,

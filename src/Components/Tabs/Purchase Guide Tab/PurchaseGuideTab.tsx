@@ -1,31 +1,13 @@
 import React from 'react';
-import fullSeasonSchedule from '../../data/scheduleData';
-import '../../styles/PurchaseGuideTab.css';
+import fullSeasonSchedule from '../../../data/scheduleData';
+
 import { Checkbox, FormControl, FormGroup, FormControlLabel, Typography } from '@material-ui/core';
-import { ContentObject } from '../../data/ContentData/ContentTypes';
-
-type PurchaseGuideTabProps = {
-    favouriteSeries: string[];
-    useFavourites: boolean;
-    useAll: boolean;
-    useEligible: boolean;
-    updateUseFavourites: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    updateUseAll: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    updateUseEligible: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    trackData: ContentObject;
-    carData: ContentObject;
-    currentWeek: number;
-};
-
-type TrackUsageDataType = {
-    [key: string]: { usage: number; series: string[] };
-};
-
-type PurchaseGuideTrackTileProps = {
-    trackName: string;
-    trackUsage: number;
-    seriesUsage: string[];
-};
+import PurchaseGuideTrackTile from './PurchaseGuideTrackTile';
+// Import Types
+import PurchaseGuideTabProps from '../../../Types/PurchaseGuideTab.types';
+import TrackUsageDataType from '../../../Types/TrackUsageData.types';
+// Import Styles
+import '../../../styles/PurchaseGuideTab.css';
 
 const PurchaseGuideTab: React.FC<PurchaseGuideTabProps> = ({
     favouriteSeries,
@@ -162,21 +144,4 @@ const PurchaseGuideTab: React.FC<PurchaseGuideTabProps> = ({
     );
 };
 
-const PurchaseGuideTrackTile: React.FC<PurchaseGuideTrackTileProps> = ({
-    trackName,
-    trackUsage,
-    seriesUsage,
-}) => {
-    return (
-        <div className='purchase-guide-tile'>
-            <h4>{`${trackName}: (${trackUsage})`}</h4>
-            <p>Used in the following series:</p>
-            <ul>
-                {seriesUsage.map((series) => (
-                    <li key={`${trackName}+${series}`}>{fullSeasonSchedule[series].name}</li>
-                ))}
-            </ul>
-        </div>
-    );
-};
 export default PurchaseGuideTab;

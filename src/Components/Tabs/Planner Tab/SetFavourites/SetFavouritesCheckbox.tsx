@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { Checkbox } from '@material-ui/core';
-
-type SetFavouritesCheckboxProps = {
-    item: string;
-    itemType: string;
-    updateFavourites: (item: string) => void;
-};
+// Import Types
+import SetFavouritesCheckboxProps from '../../../../Types/SetFavouritesCheckbox.types';
 
 const SetFavouritesCheckbox: React.FC<SetFavouritesCheckboxProps> = ({
     item,
@@ -15,7 +11,7 @@ const SetFavouritesCheckbox: React.FC<SetFavouritesCheckboxProps> = ({
     const favourites: string[] = JSON.parse(
         String(window.localStorage.getItem(`favourite${itemType}`))
     );
-    const itemFavourited: boolean = favourites.indexOf(item) >= 0 ? true : false;
+    const itemFavourited: boolean = favourites.indexOf(item) >= 0;
     const [checked, setChecked] = useState(itemFavourited);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         updateFavourites(item);

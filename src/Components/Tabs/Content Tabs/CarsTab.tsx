@@ -1,13 +1,7 @@
 import React from 'react';
 import ContentTab from './ContentTab';
-import { ContentObject } from '../../../data/ContentData/ContentTypes';
-
-type CarsTabProps = {
-    cars: ContentObject;
-    ownedCars: string[];
-    updateOneItem: (car: string) => void;
-    updateAllItems: (allCars: ContentObject, updatedCarsList: string[]) => void;
-};
+// Import Types
+import CarsTabProps from '../../../Types/CarsTab.types';
 
 const CarsTab: React.FC<CarsTabProps> = ({ cars, ownedCars, updateOneItem, updateAllItems }) => {
     const carNames = Object.keys(cars);

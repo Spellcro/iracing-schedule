@@ -1,13 +1,7 @@
 import React from 'react';
 import ContentTab from './ContentTab';
-import { ContentObject } from '../../../data/ContentData/ContentTypes';
-
-type TracksTabProps = {
-    tracks: ContentObject;
-    ownedTracks: string[];
-    updateOneItem: (track: string) => void;
-    updateAllItems: (allTracks: ContentObject, updatedTracksList: string[]) => void;
-};
+// Import Types
+import TracksTabProps from '../../../Types/TracksTab.types';
 
 const TracksTab: React.FC<TracksTabProps> = ({
     tracks,

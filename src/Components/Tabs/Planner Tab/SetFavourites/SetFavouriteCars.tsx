@@ -1,6 +1,8 @@
 import React from 'react';
-import SetFavouritesDialog, { SetFavouritesProps } from './SetFavouritesDialog';
+import SetFavouritesDialog from './SetFavouritesDialog';
 import carsData from '../../../../data/ContentData/carsData';
+// Import Types
+import SetFavouritesProps from '../../../../Types/SetFavourites.types';
 
 const SetFavouriteCars: React.FC<SetFavouritesProps> = ({
     closeModal,

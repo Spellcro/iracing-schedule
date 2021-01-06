@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import SetFavouriteCars from './SetFavouriteCars';
 import SetFavouriteTracks from './SetFavouriteTracks';
 import SetFavouriteSeries from './SetFavouriteSeries';
-
+// Import Types
+import SetFavouritesWrapperProps from '../../../../Types/SetFavouritesWrapper.types';
 // Import Styles
 import '../../../../styles/SetFavourites.css';
 
-const SetFavourites: React.FC<{
-    updateFavouriteCars: (item: string) => void;
-    updateFavouriteTracks: (item: string) => void;
-    updateFavouriteSeries: (item: string) => void;
-}> = ({ updateFavouriteCars, updateFavouriteTracks, updateFavouriteSeries }) => {
+const SetFavourites: React.FC<SetFavouritesWrapperProps> = ({
+    updateFavouriteCars,
+    updateFavouriteTracks,
+    updateFavouriteSeries,
+}) => {
     const [showFavouriteCars, setShowFavouriteCars] = useState(false);
     const [showFavouriteTracks, setShowFavouriteTracks] = useState(false);
     const [showFavouriteSeries, setShowFavouriteSeries] = useState(false);

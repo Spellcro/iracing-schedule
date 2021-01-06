@@ -1,22 +1,12 @@
 import React from 'react';
 import fullSeasonSchedule from '../../../data/scheduleData';
-import { ContentObject } from '../../../data/ContentData/ContentTypes';
+
 import NoSeriesAvailable from './NoSeriesAvailable';
 import EligibleSeriesTable from './EligibleSeriesTable';
-// Import styles
+// Import Types
+import SeriesTableProps from '../../../Types/SeriesTable.types';
+// Import Styles
 import '../../../styles/SeriesTable.css';
-
-type SeriesTableProps = {
-    viewingWeek: number;
-    tracks: ContentObject;
-    cars: ContentObject;
-    filters: { [key: string]: boolean };
-    filterFavouriteCars: boolean;
-    filterFavouriteTracks: boolean;
-    filterFavouriteSeries: boolean;
-};
-
-const listOfSeries: string[] = Object.keys(fullSeasonSchedule);
 
 const SeriesTable: React.FC<SeriesTableProps> = ({
     viewingWeek,
@@ -27,6 +17,7 @@ const SeriesTable: React.FC<SeriesTableProps> = ({
     filterFavouriteTracks,
     filterFavouriteSeries,
 }) => {
+    const listOfSeries: string[] = Object.keys(fullSeasonSchedule);
     // Create an array of series where at least one car is owned
     const eligibleSeries = listOfSeries.filter((series) =>
         fullSeasonSchedule[series].eligibleCars.some((car) => cars[car].owned)

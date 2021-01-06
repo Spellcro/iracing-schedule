@@ -9,14 +9,14 @@ import HelpTab from './Components/Tabs/HelpTab';
 import PlannerTab from './Components/Tabs/Planner Tab/PlannerTab';
 import CarsTab from './Components/Tabs/Content Tabs/CarsTab';
 import TracksTab from './Components/Tabs/Content Tabs/TrackTab';
-import PurchaseGuideTab from './Components/Tabs/PurchaseGuideTab';
+import PurchaseGuideTab from './Components/Tabs/Purchase Guide Tab/PurchaseGuideTab';
 
 // Import initial setup functions
 import { SetInitialCarData, SetInitialTrackData } from './helpers/initialSetupFunctions';
 // Import Other Data
-import { ContentObject } from './data/ContentData/ContentTypes';
+import ContentObject from './Types/ContentObject.types';
 import GetCurrentWeek from './data/WeekCalculation';
-import { defaultLicenceFilters } from './Components/Tabs/Planner Tab/LicenceFilters/defaultLicenceFilters';
+import defaultLicenceFilters from './data/defaultLicenceFilters';
 
 const App = () => {
     const currentWeek = GetCurrentWeek();
@@ -157,12 +157,12 @@ const App = () => {
         setViewingWeek(Number(e.currentTarget.value));
     };
 
-    const updateFilters = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newFilters = {
+    const updateLicenceFilters = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const newLicenceFilters = {
             ...licenceFilters,
             [e.currentTarget.value]: !licenceFilters[e.currentTarget.value],
         };
-        setLicenceFilters(newFilters);
+        setLicenceFilters(newLicenceFilters);
     };
 
     const updateFavouriteCars = (car: string) => {
@@ -243,7 +243,7 @@ const App = () => {
                     viewingWeek={viewingWeek}
                     changeWeek={changeViewingWeek}
                     licenceFilters={licenceFilters}
-                    updateFilters={updateFilters}
+                    updateLicenceFilters={updateLicenceFilters}
                     updateFavouriteCars={updateFavouriteCars}
                     updateFavouriteTracks={updateFavouriteTracks}
                     filterFavouriteCars={filterFavouriteCars}

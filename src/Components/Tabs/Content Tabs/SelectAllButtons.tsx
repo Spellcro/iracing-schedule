@@ -1,17 +1,11 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { ContentObject } from '../../../data/ContentData/ContentTypes';
-// Import styles
+// Import Types
+import SelectAllButtonsProps from '../../../Types/SelectAllButtons.types';
+// Import Styles
 import '../../../styles/SelectAllButtons.css';
 
-type SelectDeselectAllButtonsProps = {
-    content: ContentObject;
-    contentList: string[];
-    ownedContent: string[];
-    updateAllItems: (allContent: ContentObject, updatedContentList: string[]) => void;
-};
-
-const SelectAllButtons: React.FC<SelectDeselectAllButtonsProps> = ({
+const SelectAllButtons: React.FC<SelectAllButtonsProps> = ({
     content,
     contentList,
     ownedContent,
