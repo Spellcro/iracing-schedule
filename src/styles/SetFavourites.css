@@ -1,25 +1,24 @@
 .set-favourites-wrapper {
-    padding: 0.4rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .set-favourites-button {
-    margin: 0.4rem !important;
+  margin: 0.4rem !important;
 }
 .set-favourites-button:hover {
-    box-shadow: black 1px 3px 6px;
-    font-weight: 600;
-    color: rgb(245, 0, 87);
+  box-shadow: black 1px 3px 6px;
+  color: rgb(245, 0, 87);
 }
 
 .set-favourites-dialog {
-    min-width: '600px';
-    max-width: '800px';
-    max-height: '1100px';
-    text-align: 'center';
-    margin: 'auto';
-    font-size: small;
-    font-family: Arial, Helvetica, sans-serif;
+  min-width: '600px';
+  max-width: '800px';
+  max-height: '1100px';
+  text-align: 'center';
+  margin: 'auto';
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
 }

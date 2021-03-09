@@ -1,11 +1,11 @@
 type ContentObject = {
-    [key: string]: ContentDetails;
+  [key: string]: ContentDetails;
 };
 
 type ContentDetails = {
-    name: string;
-    free: boolean;
-    owned: boolean;
+  name: string;
+  free: boolean;
+  owned: boolean;
 };
 
 export default ContentObject;

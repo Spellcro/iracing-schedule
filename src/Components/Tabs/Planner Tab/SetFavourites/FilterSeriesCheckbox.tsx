@@ -4,16 +4,16 @@ import FilterCheckbox from './FilterCheckbox';
 import { FilterCheckboxContainerProps } from '../../../../Types/FilterCheckboxes.types';
 
 const FilterSeriesCheckbox: React.FC<FilterCheckboxContainerProps> = ({
-    filterFavourites,
-    updateFilterFavourites,
+  filterFavourites,
+  updateFilterFavourites
 }) => {
-    return (
-        <FilterCheckbox
-            filterFavourites={filterFavourites}
-            updateFilterFavourites={updateFilterFavourites}
-            filterType='Series'
-        />
-    );
+  return (
+    <FilterCheckbox
+      filterFavourites={filterFavourites}
+      updateFilterFavourites={updateFilterFavourites}
+      filterType="Series"
+    />
+  );
 };
 
 export default FilterSeriesCheckbox;

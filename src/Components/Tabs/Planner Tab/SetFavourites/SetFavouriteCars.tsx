@@ -5,23 +5,23 @@ import carsData from '../../../../data/ContentData/carsData';
 import SetFavouritesProps from '../../../../Types/SetFavourites.types';
 
 const SetFavouriteCars: React.FC<SetFavouritesProps> = ({
-    closeModal,
-    openModal,
-    showModal,
-    updateFavourites,
+  closeModal,
+  openModal,
+  showModal,
+  updateFavourites
 }) => {
-    const carsList = Object.keys(carsData);
-    return (
-        <SetFavouritesDialog
-            closeModal={closeModal}
-            openModal={openModal}
-            showModal={showModal}
-            itemList={carsList}
-            updateFavourites={updateFavourites}
-            itemType={'Cars'}
-            data={carsData}
-        />
-    );
+  const carsList = Object.keys(carsData);
+  return (
+    <SetFavouritesDialog
+      closeModal={closeModal}
+      openModal={openModal}
+      showModal={showModal}
+      itemList={carsList}
+      updateFavourites={updateFavourites}
+      itemType={'Cars'}
+      data={carsData}
+    />
+  );
 };
 
 export default SetFavouriteCars;

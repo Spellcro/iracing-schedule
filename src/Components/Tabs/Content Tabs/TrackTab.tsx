@@ -4,22 +4,22 @@ import ContentTab from './ContentTab';
 import TracksTabProps from '../../../Types/TracksTab.types';
 
 const TracksTab: React.FC<TracksTabProps> = ({
-    tracks,
-    ownedTracks,
-    updateOneItem,
-    updateAllItems,
+  tracks,
+  ownedTracks,
+  updateOneItem,
+  updateAllItems
 }) => {
-    const trackNames = Object.keys(tracks);
-    return (
-        <ContentTab
-            content={tracks}
-            contentList={trackNames}
-            imageFolder={'trackImages'}
-            ownedContent={ownedTracks}
-            updateOneItem={updateOneItem}
-            updateAllItems={updateAllItems}
-        />
-    );
+  const trackNames = Object.keys(tracks);
+  return (
+    <ContentTab
+      content={tracks}
+      contentList={trackNames}
+      imageFolder={'trackImages'}
+      ownedContent={ownedTracks}
+      updateOneItem={updateOneItem}
+      updateAllItems={updateAllItems}
+    />
+  );
 };
 
 export default TracksTab;

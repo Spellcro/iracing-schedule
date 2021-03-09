@@ -1,5 +1,5 @@
 type LicenceFiltersType = {
-    [key: string]: boolean;
+  [key: string]: boolean;
 };
 
 export default LicenceFiltersType;

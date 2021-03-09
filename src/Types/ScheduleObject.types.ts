@@ -1,11 +1,11 @@
 type ScheduleObject = {
-    [key: string]: SeriesDetails;
+  [key: string]: SeriesDetails;
 };
 type SeriesDetails = {
-    name: string;
-    eligibleCars: string[];
-    seriesSchedule: string[];
-    licenceClass: string;
+  name: string;
+  eligibleCars: string[];
+  seriesSchedule: string[];
+  licenceClass: string;
 };
 
 export default ScheduleObject;

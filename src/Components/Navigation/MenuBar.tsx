@@ -5,18 +5,21 @@ import MenuBarProps from '../../Types/MenuBar.types';
 // Import styles
 import '../../styles/MenuBar.css';
 
-const MenuBar: React.FC<MenuBarProps> = ({ activeTab, allTabs, callback }) => {
-    return (
-        <div>
-            <AppBar position='fixed' color='default'>
-                <Tabs value={activeTab} onChange={callback} aria-label='simple menu bar'>
-                    {allTabs.map((tab) => (
-                        <Tab value={tab} label={tab} key={tab} className='menu-tab' />
-                    ))}
-                </Tabs>
-            </AppBar>
-        </div>
-    );
+const MenuBar: React.FC<MenuBarProps> = ({ activeTab, allTabs, changeTab }) => {
+  return (
+    <AppBar position="fixed" color="default">
+      <Tabs value={activeTab} onChange={changeTab}>
+        {allTabs.map((tab) => (
+          <Tab
+            value={tab}
+            label={tab}
+            key={`${tab}-tab`}
+            classes={{ root: 'menu-tab' }}
+          />
+        ))}
+      </Tabs>
+    </AppBar>
+  );
 };
 
 export default MenuBar;
